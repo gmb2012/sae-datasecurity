@@ -1,0 +1,17 @@
+.reveal {
+    width: 1800px;
+    height: 0px;
+}
+
+.reveal .slides {
+    width: 1750px;
+    height: 750px;
+    left: 50px;
+    top: 50px;
+    text-align: left;
+}
+
+.reveal .slides > section {
+    left: 0;
+    top: 0;
+}
