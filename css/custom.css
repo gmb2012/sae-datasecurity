@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 .reveal {
     width: 1800px;
     height: 0px;
 }
 
 .reveal .slides {
+    max-width: 1750px;
     width: 1750px;
     height: 750px;
     left: 50px;
@@ -14,4 +17,34 @@
 .reveal .slides > section {
     left: 0;
     top: 0;
+}
+
+/* MOVE TO SASS LATER */
+body {
+    background: #00447A;
+    background: -moz-radial-gradient(center, circle cover, #006EB6 0%, #00447A 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #006EB6), color-stop(100%, #00447A));
+    background: -webkit-radial-gradient(center, circle cover,#006EB6 0%, #00447A 100%);
+    background: -o-radial-gradient(center, circle cover, #006EB6 0%, #00447A 100%);
+    background: -ms-radial-gradient(center, circle cover, #006EB6 0%, #00447A 100%);
+    background: radial-gradient(center, circle cover, #006EB6 0%, #00447A 100%);
+    background-color: #00447A;
+}
+
+.reveal {
+    font-family: "Raleway", sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-family: "Raleway", sans-serif;
+    color: #EAC525;
+}
+
+.reveal h1 {
+    text-shadow: 3px 2px 0px rgba(234, 197, 37, 0.2);
 }
