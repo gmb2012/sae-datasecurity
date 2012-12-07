@@ -1,13 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 .reveal {
-    width: 1800px;
+    width: 1400px;
     height: 0px;
 }
 
 .reveal .slides {
-    max-width: 1750px;
-    width: 1750px;
+    max-width: 1350px;
+    width: 1350px;
     height: 750px;
     left: 50px;
     top: 50px;
@@ -42,9 +42,24 @@ body {
 .reveal h5,
 .reveal h6 {
     font-family: "Raleway", sans-serif;
+    color: #FFFFFF;
+}
+
+.reveal h2 {
     color: #EAC525;
 }
 
 .reveal h1 {
+    color: #EAC525;
     text-shadow: 3px 2px 0px rgba(234, 197, 37, 0.2);
+}
+
+.reveal .spacer {
+    margin-bottom: 15px;
+}
+
+.reveal ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
 }
