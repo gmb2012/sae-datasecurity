@@ -83,7 +83,14 @@
 				font-size: 14px;
 				color: rgba( 255, 255, 255, 0.9 );
 			}
-		</style>
+
+            #time {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+
+            }
+        </style>
 	</head>
 
 	<body>
@@ -98,10 +105,93 @@
 		</div>
 		<div id="notes"></div>
 
+        <div id="time">
+            Elapsed: <span id="elapsed">00:00:00</span><br />
+            Time: <span id="theClock"></span>
+        </div>
+
+
+        <script>
+            var elapsed;
+
+            function Elapsed(start) {
+                this.start = start.getTime();
+                this.current = new Date().getTime();
+
+                this.newCurrent = function() { this.current = new Date().getTime() }
+
+                this.getTimeDiff = function() {
+                    return Math.round((this.current - this.start) / 1000);
+                }
+
+                this.getSeconds = function() {
+                    return this.getTimeDiff() % 60;
+                }
+
+                this.getMinutes = function() {
+                    return Math.floor(this.getTimeDiff() / 60);
+                }
+
+                this.getHours = function() {
+                    return Math.floor(this.getTimeDiff() / 60 / 60);
+                }
+
+                this.formatNumber = function(i) {
+                    if (i<10)
+                    {
+                        i="0" + i;
+                    }
+                    return i;
+                }
+
+                this.toString = function() {
+                    return this.formatNumber(this.getHours()) + ":" + this.formatNumber(this.getMinutes()) + ":" + this.formatNumber(this.getSeconds());
+                }
+            }
+
+            function displayElapsed () {
+                if(elapsed == undefined) {
+                    elapsed = new Elapsed(new Date());
+                }
+
+                elapsed.newCurrent();
+
+
+                document.getElementById('elapsed').innerHTML = elapsed.toString();
+                setTimeout(function(){displayElapsed()},500)
+            }
+
+            function startClock()
+            {
+                var today=new Date();
+                var h=today.getHours();
+                var m=today.getMinutes();
+                var s=today.getSeconds();
+                // add a zero in front of numbers<10
+                m=checkTime(m);
+                s=checkTime(s);
+                document.getElementById('theClock').innerHTML= h + ":" + m + ":" + s;
+                t=setTimeout(function(){startClock()},500);
+            }
+
+            function checkTime(i)
+            {
+                if (i<10)
+                {
+                    i="0" + i;
+                }
+                return i;
+            }
+
+            var run = false;
+            startClock();
+        </script>
+
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/plugin/markdown/showdown.js"></script>
 
 		<script>
+
 		var socketId = '{{socketId}}';
 		var socket = io.connect(window.location.origin);
 		var notes = document.getElementById('notes');
@@ -121,6 +211,12 @@
 
 			currentSlide.contentWindow.Reveal.slide(data.indexh, data.indexv);
 			nextSlide.contentWindow.Reveal.slide(data.nextindexh, data.nextindexv);
+
+            if (!run) {
+                run = true;
+                console.log("sss");
+                displayElapsed();
+            }
 		});
 		socket.on('fragmentdata', function(data) {
 			// ignore data from sockets that aren't ours
@@ -132,6 +228,12 @@
 			else if (data.fragment === 'previous') {
 				currentSlide.contentWindow.Reveal.prevFragment();
 			}
+
+            if (!run) {
+                run = true;
+                console.log("sss");
+                displayElapsed();
+            }
 		});
 		</script>
 

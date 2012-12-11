@@ -45,7 +45,8 @@
 				</section>
 
                 <section>
-                    <h2>Me</h2>
+                    <h2>About me</h2>
+
                 </section>
 
                 <section>
@@ -83,15 +84,21 @@
 
                 <section>
                     <h2>Kontakt</h2>
-                    <ul>
-                        <li>bjoern.zapadlo@googlemail.com</li>
-                        <li class="spacer">http://www.zapadlo.de</li>
-                        <li class="spacer">@BjoeZap</li>
-                        <li>https://www.xing.com/profile/Bjoern_Zapadlo</li>
-                        <li class="spacer">http://de.linkedin.com/pub/bjoern-zapadlo/36/889/1a5</li>
-                        <li>Facebook</li>
-                        <li>Google+</li>
-                    </ul>
+                    <p>
+                        bjoern.zapadlo@googlemail.com<br />
+                        http://www.zapadlo.de
+                    </p>
+                    <p>
+                        @BjoeZap
+                    </p>
+                    <p>
+                        https://www.xing.com/profile/Bjoern_Zapadlo<br />
+                        http://de.linkedin.com/pub/bjoern-zapadlo/36/889/1a5
+                    </p>
+                    <p>
+                        Facebook<br />
+                        Google+
+                    </p>
                 </section>
 
 				<section>
@@ -127,7 +134,9 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '/socket.io/socket.io.js', async: true },
+                    { src: 'plugin/notes-server/client.js', async: true }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
