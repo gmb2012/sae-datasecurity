@@ -54,12 +54,10 @@ body {
     text-shadow: 3px 2px 0px rgba(234, 197, 37, 0.2);
 }
 
-.reveal .spacer {
-    margin-bottom: 15px;
+.reveal p {
+    margin-bottom: 25px;
 }
 
-.reveal ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+.reveal strong {
+    color: #EAC525;
 }
