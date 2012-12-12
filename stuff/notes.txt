@@ -1,0 +1,4 @@
+ToDo:
+- SSL
+- Kryptologie => SHA va. MD5
+- WLAN-Security
