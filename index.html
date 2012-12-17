@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 
 	<head>
 		<meta charset="utf-8">
@@ -544,7 +546,129 @@
                     <p>(Browser / Email-Client abdichten)</p>
                 </section>
 
+                <section>
+                    <h2>Webapplikation</h2>
+                    <p>
+                        <h3>Aktuelle Komponenten benutzen:</h3>
+                        Betriebssystem / Datenbank / Programmiersprache / Frameworks
+                    </p>
+                    <p>
+                        <h3>Sichere Programmierrichtlinien beachten</h3>
+                        Escaping / Filtern / Validierung
+                    </p>
+                    <p>
+                        <h3>Security best practices / Härten der Applikation</h3>
+                       Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting
+                    </p>
+                </section>
 
+                <section>
+                    <h2>Hardware</h2>
+                    <p>
+                        <h3>Rechenzentrum</h3>
+                        <p>
+                            Schutz vor Elementarschäden<br />
+                            Geheimer Ort<br />
+                            Zweites RZ<br />
+                            Zugangskontrolle
+                        </p>
+                    </p>
+                    <p>
+                        <h3>Server</h3>
+                        <p>
+                            Doppelt ausgeführt<br />
+                            Standardkomponenten<br />
+                            Virtualisierung<br />
+                            Monitoring
+                        </p>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Backup</h2>
+                    <h3>Wie sichert ihr eure Daten?</h3>
+                </section>
+
+                <section>
+                    <h2>Backup</h2>
+                    <p>
+                        Medien<br />
+                        Festplatte / Bänder / DVD / BlueRay / Online-Backup
+                    </p>
+                    <p>RAID 1/5</p>
+                    <p>Backup vs. Archivierung vs. Image</p>
+                    <p>
+                        Strategien<br />
+                        Full-Backup / Differentiell / Inkrementell / Mischtaktik
+                    </p>
+                    <p>
+                        Was ist zu sichern?<br />
+                        Lagerung der Backups<br />
+                        Frequenz der Backups
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Backup</h2>
+                    <h3>Spannungsverhältniss</h3>
+                    <p>Kosten</p>
+                    <p>vs.</p>
+                    <p>Geschwindigkeit</p>
+                    <p>vs.</p>
+                    <p>Sicherheit</p>
+                    <p>vs.</p>
+                    <p>Lebenszeit</p>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Verschlüsselung - symmetrisch</h2>
+                    <p>Ver- und Entschlüsselung erfolgen mit ein und demselben (geheimen) Schlüssel</p>
+                    <p>
+                        Bsp.: vertrauliche Speicherung von Daten eines Benutzers oder gemeinsam benutzter Daten einer Benutzergruppe lokal,
+                        auf Disketten oder einem Server.
+                    </p>
+                    <p>
+                        Problem:<br />
+                        Einsatz im Netz, da Schlüssel paarweise vereinbart, geheim gehalten und sicher übertragen werden müssten
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Verschlüsselung - asymmetrisch</h2>
+                    <p>
+                        Eine Nachricht wird nicht mehr mit ein und dem gleichen Schlüssel ver- und entschlüsselt,
+                        sondern mit zwei unterschiedlichen, einander zugeordneten Schlüsseln: <strong>Öffentlich</strong> und <strong>privater</strong> Schlüssel
+                    </p>
+                    <p>Öffentlicher Schlüssel öffentlich bekannt Digitale Unterschriften (Beweis der Originalität eines elektronischen Dokuments)</p>
+                    <p>Der öffentliche Schlüssel einer Person wird verwendet, um eine Nachricht an diese Person zu verschlüsseln</p>
+                    <p>Der private Schlüssel wird zur Decodierung der verschlüsselten Nachricht verwendet und steht nur dem Empfänger zur Verfügung</p>
+                    <p>Besitz des öffentlichen Schlüssels einer Person ermöglicht lediglich das Versenden einer verschlüsselten Nachricht an diese Person</p>
+                </section>
+
+                <section>
+                    <h2>Verschlüsselung - asymetrisch</h2>
+                    <p>Mit Hilfe des öffentlichen Schlüssels kann diese Nachricht nicht gelesen werden</p>
+                    <p>Austausch der Schlüssel häufig symmetrisch verschlüsselt</p>
+                    <p>Worst case: Verlust / Kompromitierung des persönlichen Schlüssels</p>
+                </section>
+
+                <section>
+                    <h2>Verschlüsselung - Algorithmen</h2>
+                    <p>
+                        <h3>Unsicher</h3>
+                        Data Encryption Standard, DES<br />
+                        Md5<br />
+                        Sha1
+                    </p>
+                    <p>
+                        <h3>(Relativ) Sicher</h3>
+                        Sha256<br />
+                        Triple DES, 3DES<br />
+                        AES<br />
+                        Blowfish / Twofish
+                    </p>
+                </section>
 
 
                 <section>
@@ -553,6 +677,7 @@
                     <p>Wir sind immer einen Schritt hinterher!</p>
                     <p>Klartext speichern vermeiden!</p>
                     <p>Verschlüsselt übertragen!</p>
+                    <p>Man kann nicht überall sofort gut sein. Ein Schritt nach dem anderen!</p>
                     <p>Rechtlicher Beistand schadet nicht!</p>
                     <p>Planung!</p>
                     <p>Gehirn einschalten!!!</p>
