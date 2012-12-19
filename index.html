@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
       xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-      xmlns="http://www.w3.org/1999/html">
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 	<head>
 		<meta charset="utf-8">
@@ -39,658 +39,776 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
-					<h1>Datensicherheit</h1>
-					<h3>Vorlesung am SAE Institute</h3>
-                    <h3>Dozent: Bjoern Zapadlo</h3>
-				</section>
-
                 <section>
-                    <h2>About me</h2>
-                    <p>
-                        Bjoern Zapadlo<br />
-                        Konstanz<br />
-                        33 Jahre
-                    </p>
-                    <p>
-                        Teamlead / Senior Software Developer HolidayCheck AG
-                    </p>
-                    <p>
-                        Informatik Studium 1999 - 2002<br />
-                        3 Agenturen in Stuttgart
-                    </p>
-                    <p>
-                        HolidayCheck International Websites / new Framework<br />
-                        Neckermann / Thomas Cook
-                    </p>
-                    <p>Dozent an der SAE, Dualen Hochschule Stuttgart, Hochschule Furtwangen</p>
-                    <p>PHP, Java, Scala, Javasccript, CSS, Html,MySQL, MongoDB, Elasticsearch, ...</p>
-                </section>
+                    <section>
+                        <h1>Datensicherheit</h1>
+                        <h3>Vorlesung am SAE Institute</h3>
+                        <h3>Dozent: Bjoern Zapadlo</h3>
+                    </section>
 
-                <section>
-                    <h2>Contact me</h2>
-                    <p>
-                        bjoern.zapadlo@gmail.com<br />
-                        http://www.zapadlo.de
-                    </p>
-                    <p>
-                        @BjoeZap
-                    </p>
-                    <p>
-                        https://www.xing.com/profile/Bjoern_Zapadlo<br />
-                        http://de.linkedin.com/pub/bjoern-zapadlo/36/889/1a5
-                    </p>
-                    <p>
-                        Facebook<br />
-                        Google+
-                    </p>
-                </section>
-
-                <section>
-                    <h2>HolidayCheck AG</h2>
-                    <p>
-                        Größtes deutsches Meinungsportal für Reise und Urlaub<br />
-                        Vermittlung von Reisen<br />
-                        Sitz in der Schweiz, direkt am Bodensee<br />
-                        Börsennotiert über Tomorrow Focus AG<br />
-                        Existiert seit 1999<br />
-                        Ausgründungen in mehreren europäischen Ländern<br />
-                        Über 300 Mitarbeiter<br />
-                    </p>
-                </section>
-
-                <section>
-                    <blink id="blinktag"><h1>Yes, we hire ;)</h1></blink>
-                    <h3>http://www.holidaycheck.de/jobs</h3>
-                    <script>
-                     var el = document.getElementById('blinktag');
-                     setInterval(function(){
-                       if ( el.style.visibility != 'hidden' ) {
-                         el.style.visibility = 'hidden';
-                       }
-                       else {
-                         el.style.visibility = '';
-                       }
-                     }, 500);
-                     </script>
-                </section>
-
-                <section>
-                    <h3>Jetzt aber Schluss mit der Werbung...</h3>
-                </section>
-
-                <section>
-                    <h2>Agenda</h2>
-                    <ol>
-                        <li>Definition von Datensicherheit</li>
-                        <li>Bedrohungen</li>
-                        <li>Verteidigung</li>
-                        <li>Datenschutz</li>
-                        <li>Rechtliches</li>
-                        <li>
-                            A closer look:
-                            <ul>
-                                <li>Passwörter</li>
-                                <li>Authentifizierung</li>
-                            </ul>
-                        </li>
-                        <li>Misc / Q&A</li>
-                    </ol>
-                </section>
-
-                <section data-state="reset">
-                    <h1>1. Definitionen</h1>
-                </section>
-
-                <section>
-                    <h2>Informationssicherheit</h2>
-                    <p>
-                        Als Informationssicherheit bezeichnet man Eigenschaften von informationsverarbeitenden und -lagernden Systemen,
-                        welche die <strong>Vertraulichkeit</strong>, <strong>Verfügbarkeit</strong> und <strong>Integrität</strong> sicherstellen.
-                        Informationssicherheit dient dem Schutz vor Gefahren bzw. Bedrohungen, der Vermeidung von Schäden und der Minimierung von Risiken.
-                    </p>
-                    <p>Datensicherheit und Informationssicherheit werden synonym gebraucht, oft wird die Thematik auch schlicht mit der Begrifflichkeit „Security“ bezeichnet.</p>
-                    <p>
-                        Informationssicherheit bezieht sich auf alle
-                        relevanten Informationen einer Organisation oder eines Unternehmens
-                        einschließlich personenbezogener Daten
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Vertraulichkeit</h2>
-                    <p>
-                        Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden,
-                        dies gilt sowohl beim Zugriff auf gespeicherte Daten wie auch während der Datenübertragung.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Integrität</h2>
-                    <p>Daten dürfen nicht unbemerkt verändert werden.Respektive es müssen alle Änderungen nachvollziehbar sein.</p>
-                </section>
-
-                <section>
-                    <h2>Verfügbarkeit</h2>
-                    <p>Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet werden.</p>
-                </section>
-
-                <section>
-                    <h2>Datenschutz</h2>
-                    <p>Es geht hierbei nicht um den Schutz von allgemeinen Daten vor Schäden, sondern um den Schutz persönlicher Daten vor Missbrauch.</p>
-                    <p>
-                        Der Schutz personenbezogener Daten stützt sich auf das Prinzip der informationellen Selbstbestimmung.
-                        Diese wurde im BVerfG-Urteil zur Volkszählung festgeschrieben.
-                        Geschützt werden muss dabei die Privatsphäre, d. h. Persönlichkeitsdaten bzw. Anonymität müssen gewahrt bleiben
-                        (Geregelt in Datenschutzgesetzen (zum Beispiel Bundesdatenschutzgesetz)).
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Randthemen & Verwandte Begriffe</h2>
-                    <div class="fragment">
-                        <h3>Authentizität</h3>
-                        <p>Echtheit und Glaubwürdigkeit einer Person oder eines Dienstes müssen überprüfbar sein.</p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Zurechenbarkeit</h3>
+                    <section>
+                        <h2>About me</h2>
                         <p>
-                            (engl. accountability)<br/>
-                            „Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.“
+                            Bjoern Zapadlo<br />
+                            Konstanz<br />
+                            33 Jahre
                         </p>
-                    </div>
-                </section>
-
-                <section>
-                    <div>
-                        <h3>Verbindlichkeit/Nichtabstreitbarkeit</h3>
                         <p>
-                            (engl. non-repudiation)<br />
-                            Sie erfordert, dass „kein unzulässiges Abstreiten durchgeführter Handlungen“ möglich ist.
-                            Sie ist unter anderem wichtig beim elektronischen Abschluss von Verträgen. Erreichbar ist sie beispielsweise durch elektronische Signaturen.
+                            Teamlead / Senior Software Developer HolidayCheck AG
                         </p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Nicht-Anfechtbarkeit</h3>
-                        <p>Der Nachweis, dass eine Nachricht versendet und empfangen worden ist (Authentizität/Nachweisbarkeit)</p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Zugriffssteuerung</h3>
-                        <p>Reglementierung des Zugriffes von außen</p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Anonymität</h3>
-                        <p> In bestimmten Kontexten (zum Beispiel im Internet)</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Anyway? Why? Me?</h2>
-                    <p>Gefahren durch Vernetzung / neue Endgeräte</p>
-                    <p>Sicherheit hat eine besondere, immer größer werdende Bedeutung</p>
-                    <p>
-                        Früher waren nur Firmen und Behörden Ziel von Hackerangriffen.
-                        Heute Gefahr für alle, die sich im Internet „tummeln“
-                    </p>
-                    <p>Jeder trägt ein Stück Verantwortung</p>
-                    <p>Extrem weites Feld</p>
-                </section>
-
-                <section>
-                    <h2>Und wo jetzt?</h2>
-                    <p>
-                        <h3 class="tagcloud">Eigener PC</h3>
-                        <h3 class="tagcloud">Programmiersprache</h3>
-                        <h3 class="tagcloud">Eigenes Verhalten</h3>
-                        <h3 class="tagcloud">Hardware</h3>
-                        <h3 class="tagcloud">Server</h3>
-                        <h3 class="tagcloud">Betriebssystem</h3>
-                        <h3 class="tagcloud">Netzwerk</h3>
-                        <h3 class="tagcloud">Software</h3>
-                        <h3 class="tagcloud">Applikation</h3>
-                        <h3 class="tagcloud">Datenbank</h3>
-                        <h3 class="tagcloud">...</h3>
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Welche Gefahren kennt ihr?</h2>
-                    <div class="fragment">
                         <p>
-                            <h3 class="tagcloud">Viren</h3>
-                            <h3 class="tagcloud">XSS</h3>
-                            <h3 class="tagcloud">Trojaner</h3>
-                            <h3 class="tagcloud">Hackerangriffe</h3>
-                            <h3 class="tagcloud">Phising</h3>
-                            <h3 class="tagcloud">DNS-Spoofing</h3>
-                            <h3 class="tagcloud">SPAM</h3>
-                            <h3 class="tagcloud">Dialer</h3>
-                            <h3 class="tagcloud">DDOS-Attacke</h3>
-                            <h3 class="tagcloud">Spyware</h3>
-                            <h3 class="tagcloud">TAN Diebstahl</h3>
-                            <h3 class="tagcloud">Phising</h3>
-                            <h3 class="tagcloud">CSRF</h3>
-                            <h3 class="tagcloud">„Ausspähen“ von Daten</h3>
-                            <h3 class="tagcloud">Botnetze</h3>
-                            <h3 class="tagcloud">Denial of Service</h3>
+                            Informatik Studium 1999 - 2002<br />
+                            3 Agenturen in Stuttgart
+                        </p>
+                        <p>
+                            HolidayCheck International Websites / new Framework<br />
+                            Neckermann / Thomas Cook
+                        </p>
+                        <p>Dozent an der SAE, Dualen Hochschule Stuttgart, Hochschule Furtwangen</p>
+                        <p>PHP, Java, Scala, Javasccript, CSS, Html,MySQL, MongoDB, Elasticsearch, ...</p>
+                    </section>
+
+                    <section>
+                        <h2>Contact me</h2>
+                        <p>
+                            bjoern.zapadlo@gmail.com<br />
+                            http://www.zapadlo.de
+                        </p>
+                        <p>
+                            @BjoeZap
+                        </p>
+                        <p>
+                            https://www.xing.com/profile/Bjoern_Zapadlo<br />
+                            http://de.linkedin.com/pub/bjoern-zapadlo/36/889/1a5
+                        </p>
+                        <p>
+                            Facebook<br />
+                            Google+
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>HolidayCheck AG</h2>
+                        <p>
+                            Größtes deutsches Meinungsportal für Reise und Urlaub<br />
+                            Vermittlung von Reisen<br />
+                            Sitz in der Schweiz, direkt am Bodensee<br />
+                            Börsennotiert über Tomorrow Focus AG<br />
+                            Existiert seit 1999<br />
+                            Ausgründungen in mehreren europäischen Ländern<br />
+                            Über 300 Mitarbeiter<br />
+                        </p>
+                    </section>
+
+                    <section>
+                        <blink id="blinktag"><h1>Yes, we hire ;)</h1></blink>
+                        <h3>http://www.holidaycheck.de/jobs</h3>
+                        <script>
+                         var el = document.getElementById('blinktag');
+                         setInterval(function(){
+                           if ( el.style.visibility != 'hidden' ) {
+                             el.style.visibility = 'hidden';
+                           }
+                           else {
+                             el.style.visibility = '';
+                           }
+                         }, 500);
+                         </script>
+                    </section>
+
+                    <section>
+                        <h3>Jetzt aber Schluss mit der Werbung...</h3>
+                    </section>
+
+                    <section>
+                        <h2>Agenda</h2>
+                        <ol>
+                            <li>Definition von Datensicherheit</li>
+                            <li>Bedrohungen</li>
+                            <li>Verteidigung</li>
+                            <li>Datenschutz</li>
+                            <li>Rechtliches</li>
+                            <li>Standards</li>
+                            <li>
+                                A closer look:
+                                <ul>
+                                    <li>Newsletter</li>
+                                    <li>Passwörter</li>
+                                    <li>Authentifizierung</li>
+                                </ul>
+                            </li>
+                            <li>Misc / Q&A</li>
+                        </ol>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>1. Definitionen</h1>
+                    </section>
+
+                    <section>
+                        <h2>Informationssicherheit</h2>
+                        <p>
+                            Als Informationssicherheit bezeichnet man Eigenschaften von informationsverarbeitenden und -lagernden Systemen,
+                            welche die <strong>Vertraulichkeit</strong>, <strong>Verfügbarkeit</strong> und <strong>Integrität</strong> sicherstellen.
+                            Informationssicherheit dient dem Schutz vor Gefahren bzw. Bedrohungen, der Vermeidung von Schäden und der Minimierung von Risiken.
+                        </p>
+                        <p>Datensicherheit und Informationssicherheit werden synonym gebraucht, oft wird die Thematik auch schlicht mit der Begrifflichkeit „Security“ bezeichnet.</p>
+                        <p>
+                            Informationssicherheit bezieht sich auf alle
+                            relevanten Informationen einer Organisation oder eines Unternehmens
+                            einschließlich personenbezogener Daten
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Vertraulichkeit</h2>
+                        <p>
+                            Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden,
+                            dies gilt sowohl beim Zugriff auf gespeicherte Daten wie auch während der Datenübertragung.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Integrität</h2>
+                        <p>Daten dürfen nicht unbemerkt verändert werden.Respektive es müssen alle Änderungen nachvollziehbar sein.</p>
+                    </section>
+
+                    <section>
+                        <h2>Verfügbarkeit</h2>
+                        <p>Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet werden.</p>
+                    </section>
+
+                    <section>
+                        <h2>Datenschutz</h2>
+                        <p>Es geht hierbei nicht um den Schutz von allgemeinen Daten vor Schäden, sondern um den Schutz persönlicher Daten vor Missbrauch.</p>
+                        <p>
+                            Der Schutz personenbezogener Daten stützt sich auf das Prinzip der informationellen Selbstbestimmung.
+                            Diese wurde im BVerfG-Urteil zur Volkszählung festgeschrieben.
+                            Geschützt werden muss dabei die Privatsphäre, d. h. Persönlichkeitsdaten bzw. Anonymität müssen gewahrt bleiben
+                            (Geregelt in Datenschutzgesetzen (zum Beispiel Bundesdatenschutzgesetz)).
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Randthemen & Verwandte Begriffe</h2>
+                        <div class="fragment">
+                            <h3>Authentizität</h3>
+                            <p>Echtheit und Glaubwürdigkeit einer Person oder eines Dienstes müssen überprüfbar sein.</p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Zurechenbarkeit</h3>
+                            <p>
+                                (engl. accountability)<br/>
+                                „Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.“
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <h3>Verbindlichkeit/Nichtabstreitbarkeit</h3>
+                            <p>
+                                (engl. non-repudiation)<br />
+                                Sie erfordert, dass „kein unzulässiges Abstreiten durchgeführter Handlungen“ möglich ist.
+                                Sie ist unter anderem wichtig beim elektronischen Abschluss von Verträgen. Erreichbar ist sie beispielsweise durch elektronische Signaturen.
+                            </p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Nicht-Anfechtbarkeit</h3>
+                            <p>Der Nachweis, dass eine Nachricht versendet und empfangen worden ist (Authentizität/Nachweisbarkeit)</p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Zugriffssteuerung</h3>
+                            <p>Reglementierung des Zugriffes von außen</p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Anonymität</h3>
+                            <p> In bestimmten Kontexten (zum Beispiel im Internet)</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Anyway? Why? Me?</h2>
+                        <p>Gefahren durch Vernetzung / neue Endgeräte</p>
+                        <p>Sicherheit hat eine besondere, immer größer werdende Bedeutung</p>
+                        <p>
+                            Früher waren nur Firmen und Behörden Ziel von Hackerangriffen.
+                            Heute Gefahr für alle, die sich im Internet „tummeln“
+                        </p>
+                        <p>Jeder trägt ein Stück Verantwortung</p>
+                        <p>Extrem weites Feld</p>
+                    </section>
+
+                    <section>
+                        <h2>Und wo jetzt?</h2>
+                        <p>
+                            <h3 class="tagcloud">Eigener PC</h3>
+                            <h3 class="tagcloud">Programmiersprache</h3>
+                            <h3 class="tagcloud">Eigenes Verhalten</h3>
+                            <h3 class="tagcloud">Hardware</h3>
+                            <h3 class="tagcloud">Server</h3>
+                            <h3 class="tagcloud">Betriebssystem</h3>
+                            <h3 class="tagcloud">Netzwerk</h3>
+                            <h3 class="tagcloud">Software</h3>
+                            <h3 class="tagcloud">Applikation</h3>
+                            <h3 class="tagcloud">Datenbank</h3>
                             <h3 class="tagcloud">...</h3>
                         </p>
-                    </div>
-                </section>
+                    </section>
 
-                <section>
-                    <h2>Schadenszenarien</h2>
-                    <div class="fragment">
+                    <section>
+                        <h2>Welche Gefahren kennt ihr?</h2>
+                        <div class="fragment">
+                            <p>
+                                <h3 class="tagcloud">Viren</h3>
+                                <h3 class="tagcloud">XSS</h3>
+                                <h3 class="tagcloud">Trojaner</h3>
+                                <h3 class="tagcloud">Hackerangriffe</h3>
+                                <h3 class="tagcloud">Phising</h3>
+                                <h3 class="tagcloud">DNS-Spoofing</h3>
+                                <h3 class="tagcloud">SPAM</h3>
+                                <h3 class="tagcloud">Dialer</h3>
+                                <h3 class="tagcloud">DDOS-Attacke</h3>
+                                <h3 class="tagcloud">Spyware</h3>
+                                <h3 class="tagcloud">TAN Diebstahl</h3>
+                                <h3 class="tagcloud">Phising</h3>
+                                <h3 class="tagcloud">CSRF</h3>
+                                <h3 class="tagcloud">„Ausspähen“ von Daten</h3>
+                                <h3 class="tagcloud">Botnetze</h3>
+                                <h3 class="tagcloud">Denial of Service</h3>
+                                <h3 class="tagcloud">...</h3>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Schadenszenarien</h2>
+                        <div class="fragment">
+                            <p>
+                                <h3>Geld weg</h3>
+                                <h3>Kundendaten weg</h3>
+                                <h3>Imageschaden</h3>
+                                <h3>Mein Daten weg</h3>
+                                <h3>Software / Hardware defekt</h3>
+                                <h3>...</h3>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                       <h2>Wer tut denn sowas?</h2>
+                       <img src="images/nikohoff.jpg" class="fragment" />
+                   </section>
+
+                    <section>
+                        <h2>Hacker</h2>
                         <p>
-                            <h3>Geld weg</h3>
-                            <h3>Kundendaten weg</h3>
-                            <h3>Imageschaden</h3>
-                            <h3>Mein Daten weg</h3>
-                            <h3>Software / Hardware defekt</h3>
-                            <h3>...</h3>
+                            Werden oft als „die Guten“ hingestellt, da sie meist ohne kriminellen Hintergrund, sondern nur aus akademischem Interesse in Netze einbrechen.
+                            Allerdings kriegt man von denen, die dies mit anderen Interessen tun ja nichts mit.
                         </p>
-                    </div>
-                </section>
+                    </section>
 
-                <section>
-                   <h2>Wer tut denn sowas?</h2>
-                   <img src="images/nikohoff.jpg" class="fragment" />
-               </section>
+                    <section>
+                        <h2>Cracker</h2>
+                        <p>Die „Bösen“. Versuchen Kopierschutzmechanismen kommerzieller Computerprogramme zu knacken und die Programme dann in Umlauf zu bringen.</p>
+                    </section>
 
-                <section>
-                    <h2>Hacker</h2>
-                    <p>
-                        Werden oft als „die Guten“ hingestellt, da sie meist ohne kriminellen Hintergrund, sondern nur aus akademischem Interesse in Netze einbrechen.
-                        Allerdings kriegt man von denen, die dies mit anderen Interessen tun ja nichts mit.
-                    </p>
-                </section>
+                    <section>
+                        <h2>Crasher</h2>
+                        <p>Legen den Schwerpunkt darauf, fremde Computersysteme zum Absturz zu bringen (z.B. Durch DoS-Attacken).</p>
+                    </section>
 
-                <section>
-                    <h2>Cracker</h2>
-                    <p>Die „Bösen“. Versuchen Kopierschutzmechanismen kommerzieller Computerprogramme zu knacken und die Programme dann in Umlauf zu bringen.</p>
-                </section>
-
-                <section>
-                    <h2>Crasher</h2>
-                    <p>Legen den Schwerpunkt darauf, fremde Computersysteme zum Absturz zu bringen (z.B. Durch DoS-Attacken).</p>
-                </section>
-
-                <section>
-                    <h2>Script Kiddie</h2>
-                    <p>
-                        Der Dummie unter den Hackern. Nutzt schon bekannte Sicherheitslücken aus, um mit ihnen das Internet unsicher zu machen.
-                        Meist haben sie kein besonderes technisches Wissen, sondern handeln, um Aufmerksamkeit auf sich zu ziehen
-                    </p>
-                </section>
-
-                <section data-state="reset">
-                    <h2>Und warum?</h2>
-                    <p>Systemmissbrauch, durch illegitime Ressourcennutzung</p>
-                    <p>Veränderung von publizierten Inhalten, etc.</p>
-                    <p>Sabotage</p>
-                    <p>Spionage</p>
-                    <p>Betrug und Diebstahl</p>
-                </section>
-
-                <section data-state="dollar">
-                    <h1>It's all about the Benjamins</h1>
-                </section>
-
-                <section data-state="reset">
-                    <h1>2. Bedrohungen</h1>
-                </section>
-
-                <section>
-                    <h2>Elementarschäden</h2>
-                    <p>Feuer</p>
-                    <p>Überschwemmung</p>
-                    <p>Sturm</p>
-                    <p>Stromausfall</p>
-                    <p>Systemausfall / Hardwaredefekt</p>
-                </section>
-
-                <section>
-                    <h2>Mensch</h2>
-                    <p>Fehlbedienung</p>
-                    <p>Löschen</p>
-                    <p>Verschieben</p>
-                    <p>“Überspeichern“</p>
-                    <p>Schwache Passwörter</p>
-                    <p>Aufschriebe</p>
-                    <p>Weitergabe von Daten</p>
-                    <p>Bequemlichkeit</p>
-                    <p>
-                        Verlust von Notebooks, Handys, USB-Sticks<br />
-                        <cite>London pro Jahr in Taxis: 3000, 6000, 2000</cite>
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Man in the middle</h2>
-                    <p>Zwischenschalten zwischen Sender und Empfänger</p>
-                    <p>Einsehen / Manipulieren der Daten</p>
-                    <p>ARP- / Gateway-Spoofing</p>
-                    <p>WLAN-Snarfing</p>
-                    <p>Host-Datei</p>
-                    <p>Kontrolle über Netzwerk-Hardware</p>
-                    <p>Ziel: z.B. Online Banking</p>
-                </section>
-
-                <section>
-                    <h2>Denial of Service</h2>
-                    <p>
-                        Als Denial of Service (kurz DoS, englisch für: Dienstverweigerung  oder -ablehnung)
-                        wird in der digitalen Datenverarbeitung die Folge einer Überlastung von Infrastruktursystemen bezeichnet.
-                    </p>
-                    <p>
-                        Solch eine Dienstverweigerung kann durch unbeabsichtigte Überlastungen verursacht werden oder durch einen mutwilligen Angriff auf einen Host (Server),
-                        einen Rechner oder sonstige Netzkomponenten in einem Datennetz. Dies geschieht in der Regel mit der Absicht,
-                        einen oder mehrere bereitgestellte Dienste arbeitsunfähig zu machen.
-                        Erfolgt solch ein Angriff koordiniert von einer größeren Anzahl anderer Systeme aus,
-                        so spricht man von Verteilter Dienstblockade oder englisch Distributed Denial of Service (DDoS).
-                        Normalerweise werden solche Angriffe nicht per Hand, sondern mit Backdoor-Programmen oder Ähnlichem durchgeführt,
-                        die sich von alleine auf anderen Rechnern im Netzwerk verbreiten und dem Angreifer durch solche Botnetze weitere Wirte zum Ausführen seiner Angriffe bringen.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Tracking</h2>
-                    <p>Angriff auf die Privatsphäre</p>
-                    <p>Tracking (Google Analytics, Omniture, ...)</p>
-                    <p>Cookies</p>
-                    <p>Web-Bugs</p>
-                    <p>Sniffing</p>
-                    <p>Webspoofing</p>
-                    <p>Spyware</p>
-                    <p>Adware</p>
-                    <p>Keylogger</p>
-                </section>
-
-                <section>
-                    <h2>SPAM</h2>
-                    <p>Massenhaftes Senden vor allem von Emails</p>
-                    <p>97% aller Emails sind Spam</p>
-                    <p>Schaden: Arbeitszeit, Rechenzeit, ...</p>
-                    <p>Rechtliches Problem: Keine einheitliche Regelung</p>
-                    <p>Extrem hoher Schaden: (> 30 Milliarden EURO pro Jahr)</p>
-                </section>
-
-                <section>
-                    <h2>Phishing</h2>
-                    <p>„password fishing“</p>
-                    <p>Ausspähen der Daten</p>
-                    <p>Gefälschte WWW-Seiten</p>
-                    <p>(HTML-)Emails</p>
-                    <p>Auch per Spionage-Software auf dem Rechner</p>
-                    <p>Pharming => DNS / Host-Spoofing</p>
-                    <p>Skiming => in Hardware (z.B. Geldautomaten)</p>
-                </section>
-
-                <section>
-                    <h2>XSS</h2>
-                    <p>Cross-Site Scripting</p>
-                    <p>Angriff auf die Webapplikation</p>
-                    <p>Über URL / Formulare</p>
-                    <p>Code-Ausführung (Javascript)</p>
-                    <p>Remote-Include (PHP)</p>
-                </section>
-
-                <section>
-                    <h2>SQL-Injection</h2>
-                    <p>Angriff auf die Datenbank</p>
-                    <p>Anlegen von Benutzern</p>
-                    <p>Löschen von Daten</p>
-                    <p>Ausgabe von Daten auf der Webseite erzwingen</p>
-                </section>
-
-                <section>
-                    <h2>CSRF</h2>
-                    <p>Cross-Site Request Forgery</p>
-                    <p>Ausnutzen der Rechte eines echten Benutzers</p>
-                    <p>über gefakte Links</p>
-                    <p>z.B. angemeldeter Benutzer legt neuen Benutzer an</p>
-                </section>
-
-                <section>
-                    <h2>Viren / Trojaner / Würmer</h2>
-                    <div class="fragment">
-                        <h3>Virus</h3>
-                        <p>Richtet meist Schaden an</p>
-                        <p>Verbreitung passiv via Datenträger / Email</p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Trojaner</h3>
-                        <p>Tarnt sich als nützliche Anwendung</p>
-                        <p>Wird meist zum Ausspionieren genutzt</p>
-                    </div>
-                    <div class="fragment">
-                        <h3>Wurm</h3>
-                        <p>Verbreitet sich aktiv selber, meist via Internet</p>
-                        <p>Oft kein direkter Schaden, sondern erst zeitverzögert</p>
-                        <p>Am gefährlichsten => Flame, Suxnet, ...</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Mobbing / Jugendschutz / Anbieterkennzeichnung / Betrug</h2>
-                    <p>Rechtlich relevante Themen</p>
-                    <p>Sicherstellung des Alters durch Verfahren (PostIdent, Personalausweis, Konto, ...)</p>
-                    <p>Redaktionelle Prüfung und Freigabe von Beiträgen</p>
-                    <p>Vollständiges Impressum falls es doch Beschwerden gibt</p>
-                    <p>Logging von Aktivität zur nachträglichen Aufspüren von Straftaten (Tracking)</p>
-                </section>
-
-                <section data-state="reset">
-                    <h1>3. Verteidigung</h1>
-                </section>
-
-                <section data-state="brain">
-                    <h2>Think!</h2>
-                    <h3>Gehirn einschalten</h3>
-                    <h3>Gesundes Misstrauen</h3>
-                </section>
-
-                <section data-state="reset">
-                    <h2>Firewalls</h2>
-                    <p>Abgrenzung von sicheren und unsicheren Netzen
-                    <p>Barriere für unerwünschte Daten
-                    <p>Ggf. Überprüfung der durchgelassenen Daten
-                    <p>Ansätze
-                        <ul>
-                            <li>Paketfilterung</li>
-                            <li>Stateful Inspection</li>
-                            <li>Überprüfung auf Applikationsebene</li>
-                        </ul>
-                    </p>
-                    <p>Personal Firewalls</p>
-                </section>
-
-                <section>
-                    <h2>IDS</h2>
-                    <p>Intrusion Detection System
-                    <p>Software / Appliance
-                    <p>Prüf-Ebenen
-                        <ul>
-                            <li>Netzwerk</li>
-                            <li>Applikation</li>
-                            <li>Datenbank</li>
-                        </ul>
-                    </p>
-                    <p>Warnehmung > Mustererkennung > Reaktion</p>
-                    <p>Statisch vs. Heuristisch</p>
-                    <p>Probleme: Falschmeldungen / Aufwändig</p>
-                </section>
-
-                <section>
-                    <h2>Honeypot</h2>
-                    <p>
-                        Als ein Honigtopf oder auch englisch Honeypot (früher auch Iron Box genannt) wird in der Computersicherheit ein Computerprogramm oder ein Server bezeichnet,
-                        das Netzwerkdienste eines Computers, eines ganzen Rechnernetzes  oder das Verhalten eines Anwenders simuliert.
-                        Honeypots werden eingesetzt, um Informationen über Angriffsmuster und Angreiferverhalten zu erhalten.
-                        Erfolgt ein Zugriff auf einen derartigen virtuellen Dienst oder Nutzer,
-                        werden alle damit verbundenen Aktionen protokolliert und gegebenenfalls ein Alarm ausgelöst.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>@home</h2>
-                    <p>Viruskiller / Adware / Spyware und automatische Signatur-Updates</p>
-                    <p>Firewall installieren (Test mit Online-Portscanner)</p>
-                    <p>Firewall auf Router einschalten</p>
-                    <p>Regelmässig Sicherheitsupdates einspielen</p>
-                    <p>(Surf)verhalten an die Gefahren anpassen</p>
-                    <p>Passwörter verwenden: Passwort-Regeln</p>
-                    <p>WPA(2) bei WLAN</p>
-                    <p>VPN / SSH</p>
-                    <p>(Surfaccount mit wenigen Rechten einrichten.)</p>
-                    <p>(Browser / Email-Client abdichten)</p>
-                </section>
-
-                <section>
-                    <h2>Webapplikation</h2>
-                    <p>
-                        <h3>Aktuelle Komponenten benutzen:</h3>
-                        Betriebssystem / Datenbank / Programmiersprache / Frameworks
-                    </p>
-                    <p>
-                        <h3>Sichere Programmierrichtlinien beachten</h3>
-                        Escaping / Filtern / Validierung
-                    </p>
-                    <p>
-                        <h3>Security best practices / Härten der Applikation</h3>
-                       Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Hardware</h2>
-                    <p>
-                        <h3>Rechenzentrum</h3>
+                    <section>
+                        <h2>Script Kiddie</h2>
                         <p>
-                            Schutz vor Elementarschäden<br />
-                            Geheimer Ort<br />
-                            Zweites RZ<br />
-                            Zugangskontrolle
+                            Der Dummie unter den Hackern. Nutzt schon bekannte Sicherheitslücken aus, um mit ihnen das Internet unsicher zu machen.
+                            Meist haben sie kein besonderes technisches Wissen, sondern handeln, um Aufmerksamkeit auf sich zu ziehen
                         </p>
-                    </p>
-                    <p>
-                        <h3>Server</h3>
+                    </section>
+
+                    <section data-state="reset">
+                        <h2>Und warum?</h2>
+                        <p>Systemmissbrauch, durch illegitime Ressourcennutzung</p>
+                        <p>Veränderung von publizierten Inhalten, etc.</p>
+                        <p>Sabotage</p>
+                        <p>Spionage</p>
+                        <p>Betrug und Diebstahl</p>
+                    </section>
+
+                    <section data-state="dollar">
+                        <h1>It's all about the Benjamins</h1>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-state="reset">
+                        <h1>2. Bedrohungen</h1>
+                    </section>
+
+                    <section>
+                        <h2>Elementarschäden</h2>
+                        <p>Feuer</p>
+                        <p>Überschwemmung</p>
+                        <p>Sturm</p>
+                        <p>Stromausfall</p>
+                        <p>Systemausfall / Hardwaredefekt</p>
+                    </section>
+
+                    <section>
+                        <h2>Mensch</h2>
+                        <p>Fehlbedienung</p>
+                        <p>Löschen</p>
+                        <p>Verschieben</p>
+                        <p>“Überspeichern“</p>
+                        <p>Schwache Passwörter</p>
+                        <p>Aufschriebe</p>
+                        <p>Weitergabe von Daten</p>
+                        <p>Bequemlichkeit</p>
                         <p>
-                            Doppelt ausgeführt<br />
-                            Standardkomponenten<br />
-                            Virtualisierung<br />
-                            Monitoring
+                            Verlust von Notebooks, Handys, USB-Sticks<br />
+                            <cite>London pro Jahr in Taxis: 3000, 6000, 2000</cite>
                         </p>
-                    </p>
+                    </section>
+
+                    <section>
+                        <h2>Man in the middle</h2>
+                        <p>Zwischenschalten zwischen Sender und Empfänger</p>
+                        <p>Einsehen / Manipulieren der Daten</p>
+                        <p>ARP- / Gateway-Spoofing</p>
+                        <p>WLAN-Snarfing</p>
+                        <p>Host-Datei</p>
+                        <p>Kontrolle über Netzwerk-Hardware</p>
+                        <p>Ziel: z.B. Online Banking</p>
+                    </section>
+
+                    <section>
+                        <h2>Denial of Service</h2>
+                        <p>
+                            Als Denial of Service (kurz DoS, englisch für: Dienstverweigerung  oder -ablehnung)
+                            wird in der digitalen Datenverarbeitung die Folge einer Überlastung von Infrastruktursystemen bezeichnet.
+                        </p>
+                        <p>
+                            Solch eine Dienstverweigerung kann durch unbeabsichtigte Überlastungen verursacht werden oder durch einen mutwilligen Angriff auf einen Host (Server),
+                            einen Rechner oder sonstige Netzkomponenten in einem Datennetz. Dies geschieht in der Regel mit der Absicht,
+                            einen oder mehrere bereitgestellte Dienste arbeitsunfähig zu machen.
+                            Erfolgt solch ein Angriff koordiniert von einer größeren Anzahl anderer Systeme aus,
+                            so spricht man von Verteilter Dienstblockade oder englisch Distributed Denial of Service (DDoS).
+                            Normalerweise werden solche Angriffe nicht per Hand, sondern mit Backdoor-Programmen oder Ähnlichem durchgeführt,
+                            die sich von alleine auf anderen Rechnern im Netzwerk verbreiten und dem Angreifer durch solche Botnetze weitere Wirte zum Ausführen seiner Angriffe bringen.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Tracking</h2>
+                        <p>Angriff auf die Privatsphäre</p>
+                        <p>Tracking (Google Analytics, Omniture, ...)</p>
+                        <p>Cookies</p>
+                        <p>Web-Bugs</p>
+                        <p>Sniffing</p>
+                        <p>Webspoofing</p>
+                        <p>Spyware</p>
+                        <p>Adware</p>
+                        <p>Keylogger</p>
+                    </section>
+
+                    <section>
+                        <h2>SPAM</h2>
+                        <p>Massenhaftes Senden vor allem von Emails</p>
+                        <p>97% aller Emails sind Spam</p>
+                        <p>Schaden: Arbeitszeit, Rechenzeit, ...</p>
+                        <p>Rechtliches Problem: Keine einheitliche Regelung</p>
+                        <p>Extrem hoher Schaden: (> 30 Milliarden EURO pro Jahr)</p>
+                    </section>
+
+                    <section>
+                        <h2>Phishing</h2>
+                        <p>„password fishing“</p>
+                        <p>Ausspähen der Daten</p>
+                        <p>Gefälschte WWW-Seiten</p>
+                        <p>(HTML-)Emails</p>
+                        <p>Auch per Spionage-Software auf dem Rechner</p>
+                        <p>Pharming => DNS / Host-Spoofing</p>
+                        <p>Skiming => in Hardware (z.B. Geldautomaten)</p>
+                    </section>
+
+                    <section>
+                        <h2>XSS</h2>
+                        <p>Cross-Site Scripting</p>
+                        <p>Angriff auf die Webapplikation</p>
+                        <p>Über URL / Formulare</p>
+                        <p>Code-Ausführung (Javascript)</p>
+                        <p>Remote-Include (PHP)</p>
+                    </section>
+
+                    <section>
+                        <h2>SQL-Injection</h2>
+                        <p>Angriff auf die Datenbank</p>
+                        <p>Anlegen von Benutzern</p>
+                        <p>Löschen von Daten</p>
+                        <p>Ausgabe von Daten auf der Webseite erzwingen</p>
+                    </section>
+
+                    <section>
+                        <h2>CSRF</h2>
+                        <p>Cross-Site Request Forgery</p>
+                        <p>Ausnutzen der Rechte eines echten Benutzers</p>
+                        <p>über gefakte Links</p>
+                        <p>z.B. angemeldeter Benutzer legt neuen Benutzer an</p>
+                    </section>
+
+                    <section>
+                        <h2>Viren / Trojaner / Würmer</h2>
+                        <div class="fragment">
+                            <h3>Virus</h3>
+                            <p>Richtet meist Schaden an</p>
+                            <p>Verbreitung passiv via Datenträger / Email</p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Trojaner</h3>
+                            <p>Tarnt sich als nützliche Anwendung</p>
+                            <p>Wird meist zum Ausspionieren genutzt</p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Wurm</h3>
+                            <p>Verbreitet sich aktiv selber, meist via Internet</p>
+                            <p>Oft kein direkter Schaden, sondern erst zeitverzögert</p>
+                            <p>Am gefährlichsten => Flame, Suxnet, ...</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Mobbing / Jugendschutz / Anbieterkennzeichnung / Betrug</h2>
+                        <p>Rechtlich relevante Themen</p>
+                        <p>Sicherstellung des Alters durch Verfahren (PostIdent, Personalausweis, Konto, ...)</p>
+                        <p>Redaktionelle Prüfung und Freigabe von Beiträgen</p>
+                        <p>Vollständiges Impressum falls es doch Beschwerden gibt</p>
+                        <p>Logging von Aktivität zur nachträglichen Aufspüren von Straftaten (Tracking)</p>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Backup</h2>
-                    <h3>Wie sichert ihr eure Daten?</h3>
+                    <section data-state="reset">
+                        <h1>3. Verteidigung</h1>
+                    </section>
+
+                    <section data-state="brain">
+                        <h2>Think!</h2>
+                        <h3>Gehirn einschalten</h3>
+                        <h3>Gesundes Misstrauen</h3>
+                    </section>
+
+                    <section data-state="reset">
+                        <h2>Faktor Mensch</h2>
+                        <p>Sensibiliseren z.B. arbeiten mit eingeschränkten Benutzerrechten</p>
+                        <p>Planung von Maßnahmen / Strategie</p>
+                        <p>Ständige Schulung von Mitarbeitern</p>
+                        <p>Passwörter</p>
+                        <p>Richtiges Löschen</p>
+                        <p>Richtes Aufbewahren von Dateien</p>
+                        <p>Risikoanalysen</p>
+                        <p>Disaster-Recovery</p>
+                    </section>
+
+                    <section>
+                        <h2>Firewalls</h2>
+                        <p>Abgrenzung von sicheren und unsicheren Netzen
+                        <p>Barriere für unerwünschte Daten
+                        <p>Ggf. Überprüfung der durchgelassenen Daten
+                        <p>Ansätze
+                            <ul>
+                                <li>Paketfilterung</li>
+                                <li>Stateful Inspection</li>
+                                <li>Überprüfung auf Applikationsebene</li>
+                            </ul>
+                        </p>
+                        <p>Personal Firewalls</p>
+                    </section>
+
+                    <section>
+                        <h2>IDS</h2>
+                        <p>Intrusion Detection System
+                        <p>Software / Appliance
+                        <p>Prüf-Ebenen
+                            <ul>
+                                <li>Netzwerk</li>
+                                <li>Applikation</li>
+                                <li>Datenbank</li>
+                            </ul>
+                        </p>
+                        <p>Warnehmung > Mustererkennung > Reaktion</p>
+                        <p>Statisch vs. Heuristisch</p>
+                        <p>Probleme: Falschmeldungen / Aufwändig</p>
+                    </section>
+
+                    <section>
+                        <h2>Honeypot</h2>
+                        <p>
+                            Als ein Honigtopf oder auch englisch Honeypot (früher auch Iron Box genannt) wird in der Computersicherheit ein Computerprogramm oder ein Server bezeichnet,
+                            das Netzwerkdienste eines Computers, eines ganzen Rechnernetzes  oder das Verhalten eines Anwenders simuliert.
+                            Honeypots werden eingesetzt, um Informationen über Angriffsmuster und Angreiferverhalten zu erhalten.
+                            Erfolgt ein Zugriff auf einen derartigen virtuellen Dienst oder Nutzer,
+                            werden alle damit verbundenen Aktionen protokolliert und gegebenenfalls ein Alarm ausgelöst.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>@home</h2>
+                        <p>Viruskiller / Adware / Spyware und automatische Signatur-Updates</p>
+                        <p>Firewall installieren (Test mit Online-Portscanner)</p>
+                        <p>Firewall auf Router einschalten</p>
+                        <p>Regelmässig Sicherheitsupdates einspielen</p>
+                        <p>(Surf)verhalten an die Gefahren anpassen</p>
+                        <p>Passwörter verwenden: Passwort-Regeln</p>
+                        <p>WPA(2) bei WLAN</p>
+                        <p>VPN / SSH</p>
+                        <p>(Surfaccount mit wenigen Rechten einrichten.)</p>
+                        <p>(Browser / Email-Client abdichten)</p>
+                    </section>
+
+                    <section>
+                        <h2>Webapplikation</h2>
+                        <p>
+                            <h3>Aktuelle Komponenten benutzen:</h3>
+                            Betriebssystem / Datenbank / Programmiersprache / Frameworks
+                        </p>
+                        <p>
+                            <h3>Sichere Programmierrichtlinien beachten</h3>
+                            Escaping / Filtern / Validierung
+                        </p>
+                        <p>
+                            <h3>Security best practices / Härten der Applikation</h3>
+                           Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Hardware</h2>
+                        <p>
+                            <h3>Rechenzentrum</h3>
+                            <p>
+                                Schutz vor Elementarschäden<br />
+                                Geheimer Ort<br />
+                                Zweites RZ<br />
+                                Zugangskontrolle
+                            </p>
+                        </p>
+                        <p>
+                            <h3>Server</h3>
+                            <p>
+                                Doppelt ausgeführt<br />
+                                Standardkomponenten<br />
+                                Virtualisierung<br />
+                                Monitoring
+                            </p>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Backup</h2>
+                        <h3>Wie sichert ihr eure Daten?</h3>
+                    </section>
+
+                    <section>
+                        <h2>Backup</h2>
+                        <p>
+                            Medien<br />
+                            Festplatte / Bänder / DVD / BlueRay / Online-Backup
+                        </p>
+                        <p>RAID 1/5</p>
+                        <p>Backup vs. Archivierung vs. Image</p>
+                        <p>
+                            Strategien<br />
+                            Full-Backup / Differentiell / Inkrementell / Mischtaktik
+                        </p>
+                        <p>
+                            Was ist zu sichern?<br />
+                            Lagerung der Backups<br />
+                            Frequenz der Backups
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Backup</h2>
+                        <h3>Spannungsverhältniss</h3>
+                        <p>Kosten</p>
+                        <p>vs.</p>
+                        <p>Geschwindigkeit</p>
+                        <p>vs.</p>
+                        <p>Sicherheit</p>
+                        <p>vs.</p>
+                        <p>Lebenszeit</p>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Verschlüsselung - symmetrisch</h2>
+                        <p>Ver- und Entschlüsselung erfolgen mit ein und demselben (geheimen) Schlüssel</p>
+                        <p>
+                            Bsp.: vertrauliche Speicherung von Daten eines Benutzers oder gemeinsam benutzter Daten einer Benutzergruppe lokal,
+                            auf Disketten oder einem Server.
+                        </p>
+                        <p>
+                            Problem:<br />
+                            Einsatz im Netz, da Schlüssel paarweise vereinbart, geheim gehalten und sicher übertragen werden müssten
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Verschlüsselung - asymmetrisch</h2>
+                        <p>
+                            Eine Nachricht wird nicht mehr mit ein und dem gleichen Schlüssel ver- und entschlüsselt,
+                            sondern mit zwei unterschiedlichen, einander zugeordneten Schlüsseln: <strong>Öffentlich</strong> und <strong>privater</strong> Schlüssel
+                        </p>
+                        <p>Öffentlicher Schlüssel öffentlich bekannt Digitale Unterschriften (Beweis der Originalität eines elektronischen Dokuments)</p>
+                        <p>Der öffentliche Schlüssel einer Person wird verwendet, um eine Nachricht an diese Person zu verschlüsseln</p>
+                        <p>Der private Schlüssel wird zur Decodierung der verschlüsselten Nachricht verwendet und steht nur dem Empfänger zur Verfügung</p>
+                        <p>Besitz des öffentlichen Schlüssels einer Person ermöglicht lediglich das Versenden einer verschlüsselten Nachricht an diese Person</p>
+                    </section>
+
+                    <section>
+                        <h2>Verschlüsselung - asymetrisch</h2>
+                        <p>Mit Hilfe des öffentlichen Schlüssels kann diese Nachricht nicht gelesen werden</p>
+                        <p>Austausch der Schlüssel häufig symmetrisch verschlüsselt</p>
+                        <p>Worst case: Verlust / Kompromitierung des persönlichen Schlüssels</p>
+                    </section>
+
+                    <section>
+                        <h2>Verschlüsselung - Algorithmen</h2>
+                        <p>
+                            <h3>Unsicher</h3>
+                            Data Encryption Standard, DES<br />
+                            Md5<br />
+                            Sha1
+                        </p>
+                        <p>
+                            <h3>(Relativ) Sicher</h3>
+                            Sha256<br />
+                            Triple DES, 3DES<br />
+                            AES<br />
+                            Blowfish / Twofish
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>HTTPS</h2>
+                        <p>
+                            Das HTTPS-Protokoll (HyperText Transfer Protocol Secure) wird zur Verschlüsselung und zur Authentifizierung der
+                            Kommunikation zwischen Webserver und Browser im World Wide Web verwendet.
+                        </p>
+                        <p>
+                            Standard-Port ist 443 und die Verschlüsselung der Daten geschieht mittels SSL/TLS.
+                        </p>
+                        <p>
+                            Unter Verwendung des SSL-Handshake-Protokolls findet zunächst eine geschützte Identifikation und Authentifizierung der Kommunikationspartner
+                            statt.
+                        </p>
+                        <p>
+                            Anschließend wird mit Hilfe asymmetrischer Verschlüsselung oder des Diffie-Hellman-Schlüsselaustauschs ein gemeinsamer symmetrischer
+                            Sitzungsschlüssel ausgetauscht. Dieser wird schließlich zur Verschlüsselung der Nutzdaten verwendet.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Security Audit / Penetrationtest</h2>
+                        <p>
+                            Einbruchversuche<br />
+                            TÜV (Gütesiegel) / Bundesamt für Sicherheit in der Informationstechnik / Externe Dienstleister
+                        </p>
+                        <p>
+                            Betrachtung von
+                            <ul>
+                                <li>Netzwerk</li>
+                                <li>Server</li>
+                                <li>Software</li>
+                                <li>Applikation</li>
+                                <li>Organisation</li>
+                                <li>...</li>
+                            </ul>
+                        </p>
+                        <p>Auf aktuellem Stand bleiben</p>
+                        <p>Blind für die eigene Sicherheit</p>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Backup</h2>
-                    <p>
-                        Medien<br />
-                        Festplatte / Bänder / DVD / BlueRay / Online-Backup
-                    </p>
-                    <p>RAID 1/5</p>
-                    <p>Backup vs. Archivierung vs. Image</p>
-                    <p>
-                        Strategien<br />
-                        Full-Backup / Differentiell / Inkrementell / Mischtaktik
-                    </p>
-                    <p>
-                        Was ist zu sichern?<br />
-                        Lagerung der Backups<br />
-                        Frequenz der Backups
-                    </p>
+                    <section>
+                        <h1>4. Datenschutz</h1>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Backup</h2>
-                    <h3>Spannungsverhältniss</h3>
-                    <p>Kosten</p>
-                    <p>vs.</p>
-                    <p>Geschwindigkeit</p>
-                    <p>vs.</p>
-                    <p>Sicherheit</p>
-                    <p>vs.</p>
-                    <p>Lebenszeit</p>
-                    </p>
+                    <section>
+                        <h1>5. Rechtliches</h1>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Verschlüsselung - symmetrisch</h2>
-                    <p>Ver- und Entschlüsselung erfolgen mit ein und demselben (geheimen) Schlüssel</p>
-                    <p>
-                        Bsp.: vertrauliche Speicherung von Daten eines Benutzers oder gemeinsam benutzter Daten einer Benutzergruppe lokal,
-                        auf Disketten oder einem Server.
-                    </p>
-                    <p>
-                        Problem:<br />
-                        Einsatz im Netz, da Schlüssel paarweise vereinbart, geheim gehalten und sicher übertragen werden müssten
-                    </p>
+                    <section>
+                        <h1>6. Standards</h1>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Verschlüsselung - asymmetrisch</h2>
-                    <p>
-                        Eine Nachricht wird nicht mehr mit ein und dem gleichen Schlüssel ver- und entschlüsselt,
-                        sondern mit zwei unterschiedlichen, einander zugeordneten Schlüsseln: <strong>Öffentlich</strong> und <strong>privater</strong> Schlüssel
-                    </p>
-                    <p>Öffentlicher Schlüssel öffentlich bekannt Digitale Unterschriften (Beweis der Originalität eines elektronischen Dokuments)</p>
-                    <p>Der öffentliche Schlüssel einer Person wird verwendet, um eine Nachricht an diese Person zu verschlüsseln</p>
-                    <p>Der private Schlüssel wird zur Decodierung der verschlüsselten Nachricht verwendet und steht nur dem Empfänger zur Verfügung</p>
-                    <p>Besitz des öffentlichen Schlüssels einer Person ermöglicht lediglich das Versenden einer verschlüsselten Nachricht an diese Person</p>
+                    <section>
+                        <h1>7. A closer look</h1>
+                    </section>
+
+                    <section>
+                        <h2>Newsletter</h2>
+                        <p>Schutz des Formulars vor automatischer Eintragung</p>
+                        <p>Captcha</p>
+                        <p>Token</p>
+                        <p>Checkboxen nicht per default an</p>
+                        <p>Erst eintragen nach Bestätigung via Email</p>
+                        <p>Gefahr als Spam verschrien zu sein</p>
+                        <p>Html vs. Plaintext => Multipart</p>
+                        <p>Impressum & Abmeldelink in der Email</p>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Verschlüsselung - asymetrisch</h2>
-                    <p>Mit Hilfe des öffentlichen Schlüssels kann diese Nachricht nicht gelesen werden</p>
-                    <p>Austausch der Schlüssel häufig symmetrisch verschlüsselt</p>
-                    <p>Worst case: Verlust / Kompromitierung des persönlichen Schlüssels</p>
-                </section>
+                    <section>
+                        <h1>8. Misc / Q&A</h1>
+                    </section>
 
-                <section>
-                    <h2>Verschlüsselung - Algorithmen</h2>
-                    <p>
-                        <h3>Unsicher</h3>
-                        Data Encryption Standard, DES<br />
-                        Md5<br />
-                        Sha1
-                    </p>
-                    <p>
-                        <h3>(Relativ) Sicher</h3>
-                        Sha256<br />
-                        Triple DES, 3DES<br />
-                        AES<br />
-                        Blowfish / Twofish
-                    </p>
-                </section>
+                    <section>
+                        <h2>Web 2.0</h2>
+                        <p>Appikationen werden mächtiger und komplizierter</p>
+                        <p>Social Networks machen Daten überallverfügbar</p>
+                        <p>Persönliche Daten meist Grundlage</p>
+                        <p>Vernetzung von Applikationen</p>
+                        <p>Speichern von Daten bei User, in der Cloud oder als Service</p>
+                    </section>
 
+                    <section>
+                        <h2>In a nutshell</h2>
+                        <p>Sicherheit ist ein kontinuierlicher Prozess!</p>
+                        <p>Wir sind immer einen Schritt hinterher!</p>
+                        <p>Klartext speichern vermeiden!</p>
+                        <p>Verschlüsselt übertragen!</p>
+                        <p>Man kann nicht überall sofort gut sein. Ein Schritt nach dem anderen!</p>
+                        <p>Rechtlicher Beistand schadet nicht!</p>
+                        <p>Planung!</p>
+                        <p>Gehirn einschalten!!!</p>
+                    </section>
 
-                <section>
-                    <h2>In a nutshell</h2>
-                    <p>Sicherheit ist ein kontinuierlicher Prozess!</p>
-                    <p>Wir sind immer einen Schritt hinterher!</p>
-                    <p>Klartext speichern vermeiden!</p>
-                    <p>Verschlüsselt übertragen!</p>
-                    <p>Man kann nicht überall sofort gut sein. Ein Schritt nach dem anderen!</p>
-                    <p>Rechtlicher Beistand schadet nicht!</p>
-                    <p>Planung!</p>
-                    <p>Gehirn einschalten!!!</p>
-                </section>
+                    <section>
+                        <h3>Datensicherheit und Datenschutz sind und bleiben ein Dauerbrenner und die Wichtigkeit wird noch weiter zunehmen</h3>
+                        <br /><br />
+                        <h3>Bereits heute beschäftigen sich Unternehmen mit nichts anderem als Sicherheit im IT-Umfeld.</h3>
+                    </section>
 
-                <section>
-                    <h2>Links</h2>
-                    <p><a href="http://www.phpids.org">www.phpids.org</a></p>
-                    <p><a href="http://de.wikipedia.org/wiki/Datenschutz">de.wikipedia.org/wiki/Datenschutz</a></p>
-                    <p><a href="http://de.wikipedia.org/wiki/Informationssicherheit">de.wikipedia.org/wiki/Informationssicherheit</a></p>
-                    <p><a href="http://sicherheitskultur.at/Eisbergprinzip.htm">sicherheitskultur.at/Eisbergprinzip.htm</a></p>
-                    <p><a href="http://www.bsi.bund.de">www.bsi.bund.de</a></p>
-                    <p><a href="http://www.sektioneins.com">www.sektioneins.com</a></p>
+                    <section>
+                        <h2>Links</h2>
+                        <p><a href="http://www.phpids.org">www.phpids.org</a></p>
+                        <p><a href="http://de.wikipedia.org/wiki/Datenschutz">de.wikipedia.org/wiki/Datenschutz</a></p>
+                        <p><a href="http://de.wikipedia.org/wiki/Informationssicherheit">de.wikipedia.org/wiki/Informationssicherheit</a></p>
+                        <p><a href="http://sicherheitskultur.at/Eisbergprinzip.htm">sicherheitskultur.at/Eisbergprinzip.htm</a></p>
+                        <p><a href="http://www.bsi.bund.de">www.bsi.bund.de</a></p>
+                        <p><a href="http://www.sektioneins.com">www.sektioneins.com</a></p>
+                    </section>
                 </section>
 
 				<section>
