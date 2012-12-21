@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
       xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 	<head>
 		<meta charset="utf-8">
@@ -23,7 +23,8 @@
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' )
+                    + '.css" type="text/css" media="print">' );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -154,7 +155,10 @@
                             welche die <strong>Vertraulichkeit</strong>, <strong>Verfügbarkeit</strong> und <strong>Integrität</strong> sicherstellen.
                             Informationssicherheit dient dem Schutz vor Gefahren bzw. Bedrohungen, der Vermeidung von Schäden und der Minimierung von Risiken.
                         </p>
-                        <p>Datensicherheit und Informationssicherheit werden synonym gebraucht, oft wird die Thematik auch schlicht mit der Begrifflichkeit „Security“ bezeichnet.</p>
+                        <p>
+                            Datensicherheit und Informationssicherheit werden synonym gebraucht,
+                            oft wird die Thematik auch schlicht mit der Begrifflichkeit „Security“ bezeichnet.
+                        </p>
                         <p>
                             Informationssicherheit bezieht sich auf alle
                             relevanten Informationen einer Organisation oder eines Unternehmens
@@ -390,13 +394,14 @@
                             wird in der digitalen Datenverarbeitung die Folge einer Überlastung von Infrastruktursystemen bezeichnet.
                         </p>
                         <p>
-                            Solch eine Dienstverweigerung kann durch unbeabsichtigte Überlastungen verursacht werden oder durch einen mutwilligen Angriff auf einen Host (Server),
-                            einen Rechner oder sonstige Netzkomponenten in einem Datennetz. Dies geschieht in der Regel mit der Absicht,
+                            Solch eine Dienstverweigerung kann durch unbeabsichtigte Überlastungen verursacht werden oder durch einen mutwilligen Angriff auf
+                            einen Host (Server), einen Rechner oder sonstige Netzkomponenten in einem Datennetz. Dies geschieht in der Regel mit der Absicht,
                             einen oder mehrere bereitgestellte Dienste arbeitsunfähig zu machen.
                             Erfolgt solch ein Angriff koordiniert von einer größeren Anzahl anderer Systeme aus,
                             so spricht man von Verteilter Dienstblockade oder englisch Distributed Denial of Service (DDoS).
                             Normalerweise werden solche Angriffe nicht per Hand, sondern mit Backdoor-Programmen oder Ähnlichem durchgeführt,
-                            die sich von alleine auf anderen Rechnern im Netzwerk verbreiten und dem Angreifer durch solche Botnetze weitere Wirte zum Ausführen seiner Angriffe bringen.
+                            die sich von alleine auf anderen Rechnern im Netzwerk verbreiten und dem Angreifer durch solche Botnetze weitere Wirte zum
+                            Ausführen seiner Angriffe bringen.
                         </p>
                     </section>
 
@@ -411,6 +416,29 @@
                         <p>Spyware</p>
                         <p>Adware</p>
                         <p>Keylogger</p>
+                    </section>
+
+                    <section>
+                        <h2>Surfspuren</h2>
+                        <div>
+                            <h3>Auf dem eigenem Rechner</h3>
+                            <p>Surfhistorie / Bookmarks / Cache des Browsers mit zwischengespeicherten Web-Seiten</p>
+                            <p>E-Mails und -Adressen im Mailprogramm</p>
+                            <p>Daten von Cookie-Servern</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <h3>Auf einem Proxy-Rechner bzw. beim Provider</h3>
+                            <p>verschickte/empfangene Daten (unverschlüsselt)</p>
+                            <p> Logfile: „Wer (welcher Rechner) rief wann welche Seite auf?“ </p>
+                        </div>
+                        <div class="fragment">
+                            <h3>Auf einem der besuchten Server</h3>
+                            <p>Logfile: "Von welchem Rechner wurden wann welche Seiten aufgerufen</p>
+                            <p>Benutzerdaten, Session, .…</p>
+                        </div>
                     </section>
 
                     <section>
@@ -545,8 +573,8 @@
                     <section>
                         <h2>Honeypot</h2>
                         <p>
-                            Als ein Honigtopf oder auch englisch Honeypot (früher auch Iron Box genannt) wird in der Computersicherheit ein Computerprogramm oder ein Server bezeichnet,
-                            das Netzwerkdienste eines Computers, eines ganzen Rechnernetzes  oder das Verhalten eines Anwenders simuliert.
+                            Als ein Honigtopf oder auch englisch Honeypot (früher auch Iron Box genannt) wird in der Computersicherheit ein Computerprogramm oder
+                            ein Server bezeichnet, das Netzwerkdienste eines Computers, eines ganzen Rechnernetzes  oder das Verhalten eines Anwenders simuliert.
                             Honeypots werden eingesetzt, um Informationen über Angriffsmuster und Angreiferverhalten zu erhalten.
                             Erfolgt ein Zugriff auf einen derartigen virtuellen Dienst oder Nutzer,
                             werden alle damit verbundenen Aktionen protokolliert und gegebenenfalls ein Alarm ausgelöst.
@@ -737,17 +765,222 @@
                     <section>
                         <h1>4. Datenschutz</h1>
                     </section>
+
+                    <section>
+                        <h2>Definition</h2>
+                        <p>Datenschutz bezeichnet den <strong>Schutz des Einzelnen vor dem Missbrauch  personenbezogener Daten</strong>.</p>
+                        <p>
+                            Der Begriff wurde auch verwendet für Schutz wissenschaftlicher und technischer Daten gegen Verlust oder Veränderung –
+                            und Schutz gegen Diebstahl dieser Daten.
+                        </p>
+                        <p>
+                            Heute bezieht sich der Begriff meist auf den Schutz personenbezogener Daten.<br />
+                            Bei personenbezogenen Daten wurde er auch für Schutz vor „Verdatung“ verwendet.
+                        </p>
+                        <p>
+                            Im englischen Sprachraum spricht man von „privacy“ (Schutz der Privatsphäre) und
+                            von „data privacy“ oder „information privacy“ (Datenschutz im engeren Sinne).<br />
+                            Im europäischen Rechtsraum wird in der Gesetzgebung auch der Begriff „data protection” verwendet.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Heute wird der Zweck des Datenschutzes darin gesehen, den Einzelnen davor zu schützen,
+                            dass er durch den Umgang mit seinen personenbezogenen Daten in seinem Recht auf informationelle Selbstbestimmung beeinträchtigt wird.
+                        </p>
+                        <p>
+                            Datenschutz steht für die Idee, dass jeder Mensch grundsätzlich selbst entscheiden kann,
+                            <strong>wem wann welche</strong> seiner persönlichen Daten zugänglich sein sollen.
+                            Der Datenschutz will den so genannten gläsernen Menschen verhindern.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Regelungen in jedem Land anders:<br />
+                            USA vs. Europäische Union vs. Deutschland
+                        </p>
+                        <p>
+                            Hauptprinzipien des Datenschutzes sind
+                            <ul>
+                                <li>Datensparsamkeit und Datenvermeidung</li>
+                                <li>Erforderlichkeit</li>
+                                <li>Zweckbindung</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Der Datenschutz bezieht sich auf die <strong>Erhebung</strong> (= Beschaffen),
+                            die <strong>Verarbeitung</strong> (= Speichern, Verändern, Übermitteln, Sperren, Löschen) und die
+                            <strong>Nutzung</strong> (=Verwenden) personenbezogener Daten.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Prinzipien</h2>
+                        <p>
+                            Auf der Internationalen Datenschutzkonferenz  2005 haben die Datenschutzbeauftragten in ihrer „Erklärung von Montreux“ darüber hinaus
+                            an die international anerkannten Datenschutzprinzipien erinnert. Diese sind:
+                        </p>
+                    </section>
+                    <section>
+                        <ol>
+                            <li>Prinzip der Zulässigkeit und Rechtmäßigkeit der Erhebung und Verarbeitung der Daten</li>
+                            <li>Prinzip der Richtigkeit</li>
+                            <li>Prinzip der Zweckgebundenheit</li>
+                            <li>Prinzip der Verhältnismäßigkeit (vgl. Verhältnismäßigkeitsprinzip)</li>
+                            <li>Prinzip der Transparenz</li>
+                            <li>Prinzip der individuellen Mitsprache und namentlich der Garantie des Zugriffsrechts für die betroffenen Personen</li>
+                            <li>Prinzip der Nicht-Diskriminierung</li>
+                            <li>Prinzip der Sicherheit</li>
+                            <li>Prinzip der Haftung</li>
+                            <li>Prinzip einer unabhängigen Überwachung und gesetzlicher Sanktionen</li>
+                            <li>Prinzip des angemessenen Schutzniveaus bei grenzüberschreitendem Datenverkehr</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2>Datenschutz ist ein zweischneidiges Schwert</h2>
+                        <p>Datenschutz vs. Informationsfreiheit</p>
+                        <p>Kosten des Datenschutzes (Datenschutzbeauftragter)</p>
+                        <p>Datenschutz und Kriminalitätsbekämpfung</p>
+                        <p>Datenschutz und Wissenschaft / Medizin</p>
+                        <p>Nur was der Kunde gezielt verbietet ist verboten, z.B. der Verkauf von Daten</p>
+                    </section>
+
                 </section>
 
                 <section>
                     <section>
                         <h1>5. Rechtliches</h1>
                     </section>
+
+                    <section>
+                        <h2>Strafrecht</h2>
+                        <p>
+                            Jegliches rechtswidrige Verändern, Löschen, Unterdrücken oder Unbrauchbar-Machen fremder Daten erfüllt den Tatbestand nach
+                            § 303a StGB (Datenveränderung). In besonders schweren Fällen ist dies auch nach § 303b I Nr. 1 StGB („Computersabotage“) strafbar
+                            und wird mit Haftstrafe von bis zu fünf Jahren oder Geldstrafe bestraft. Die Durchführung von DDOS-Attacken stellt seit 2007
+                            ebenfalls eine Computersabotage dar, gleiches gilt für jegliche Handlungen,
+                            die zur Beschädigung eines Informationssystems, das für einen anderen von wesentlicher Bedeutung ist, führen.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Das Ausspähen von Daten (§ 202a StGB), also die Erlangungs des Zugangs zu fremden Daten, die hiergegen besonders geschützt sind,
+                            wird mit Haftstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.
+                            Das Abfangen fremder Daten in Netzen oder aus elektromagnetischen Abstrahlungen ist seit 2007 ebenfalls strafbar,
+                            anders als bei § 202a StGB kommt es hier nicht auf eine besondere Zugangssicherung an.
+                            Das sich Verschaffen, Erstellen, Verbreiten, Öffentlich-Zugänglichmachen etc. von sog. „Hackertools“ steht ebenfalls seit 2007 unter Strafe,
+                            wenn damit eine Straftat vorbereitet wird (§ 202c StGB).
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Daten sind nach § 202a Abs. 2 in Verbindung mit Abs. 1 aber nur vor dem Ausspähen geschützt, wenn sie „besonders gesichert“ sind,
+                            um ein Ausufern des Tatbestandes zu vermeiden. Das heißt, erst wenn der Nutzer seine Daten technisch schützt genießt er auch den
+                            strafrechtlichen Schutz. Die frühere Debatte, ob das „Hacken“ ohne Abruf von Daten strafbar sei, ist hinfällig, seit der Wortlaut der
+                            Norm 2007 derart geändert wurde, dass Strafbarkeit bereits mit Erlangung des Zugangs zu Daten einsetzt. Weiter ist umstritten,
+                            ob die Verschlüsselung zur besonderen Sicherung zählt. Sie ist zwar sehr effektiv, aber es wird argumentiert, die Daten seien
+                            ja nicht gesichert sondern lägen nur in „unverständlicher“ bzw. schlicht „anderer“ Form vor.
+                        </p>
+                     </section>
+
+                    <section>
+                        <p>
+                            Als Computerbetrug wird nach § 263 a StGB mit Geldstrafe oder Freiheitsstrafe bis zu fünf Jahren bestraft,
+                            wenn Datenverarbeitungsvorgänge zur Erlangung von Vermögensvorteilen manipuliert werden. Schon die Erstellung,
+                            Verschaffung, Anbietung, Verwahrung oder Überlassung dafür geeigneter Computerprogramme ist strafbar.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Zivilrecht</h2>
+                        <p>
+                            Nach § 33 DSG 2000 besteht ein Anspruch auf Schadenersatz der Betroffenen, wenn Daten schuldhaft entgegen den Bestimmungen des DSG 2000
+                            verwendet werden. Ein derartiger Schadenersatzanspruch setzt den Eintritt eines Schadens voraus,
+                            der durch den Betroffenen oft schwer nachzuweisen sein wird. Aus diesem Grunde wurde für besondere Fälle,
+                            nämlich dann, wenn durch eine öffentlich zugängliche Datenverwendung von sensiblen Daten,
+                            Daten über die Kreditwürdigkeit des Betroffenen oder strafrechtlich relevante Daten schutzwürdige Geheimhaltungsinteressen des Betroffenen
+                            verletzt wurden, die zu seiner Bloßstellung führen, ein Anspruch auf angemessene Entschädigung unabhängig vom tatsächlichen Schadenseintritt
+                            festgelegt.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Für die Verpflichtung zum Schadenersatz haftet der Auftraggeber auch dann, wenn das schädigende Ereignis durch einen Mitarbeiter oder eine
+                            Mitarbeiterin herbeigeführt wurde. Das DSG normiert eine Beweislastumkehr, sodass die Haftung nur dann auszuschließen ist, wenn bei
+                            Feststehen einer Übertretung des Gesetzes der Beklagte nachweist, dass ihn an der Übertretung der Norm kein Verschulden trifft.
+                        </p>
+                        <p>
+                            In den §§ 51 f DSG sind gerichtliche Strafbestimmungen normiert. So wird etwa die, in der Absicht, sich einen vermögensrechtlichen Vorteil
+                            zu verschaffen oder einem anderen einen Nachteil zuzufügen, durchgeführte missbräuchliche Verwendung von personenbezogenen Daten,
+                            die dem Täter ausschließlich in seiner beruflichen Beschäftigung zugänglich geworden sind, mit Freiheitsstrafe bis zum einem Jahr bedroht.
+                            Auch im Strafgesetzbuch sind das missbräuchliche Abfangen von Daten, Datenbeschädigung und betrügerischer Datenverarbeitungsmissbrauch mit
+                            Freiheitsstrafe bedroht.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Konsequenzen für Unternehmen</h2>
+                        <p>
+                            Die Nichteinhaltung angemessener Datensicherheitsmaßnahmen kann auch sonstige rechtliche Konsequenzen für das Unternehmen nach sich ziehen.
+                            In aller Regel ist die Einhaltung von Datensicherheitsmaßnahmen wenigstens vertragliche Nebenpflicht in geschäftlichen Beziehungen,
+                            in denen Zugang zu Daten gewährt wird.
+                        </p>
+                        <p>
+                            Handelt es sich um sensible oder vertrauliche Daten, so wird vielfach mit Hilfe sogenannter Vertraulichkeitsvereinbarungen oder
+                            „Non Disclosure Agreements“ (NDAs) die Verpflichtung zur Geheimhaltung zum Datenschutz ausdrücklich festgeschrieben.
+                            In NDAs wird oft eine empfindliche Schadenersatzzahlung für jene Fälle vereinbart, in denen eine (auch nur fahrlässige)
+                            Weitergabe oder gar Veröffentlichung der relevanten vertraulichen Daten erfolgt. Dabei wird regelmäßig nicht auf das Verschulden abgestellt.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Trifft den Datenverarbeiter jedoch ein Verschulden an der mangelnden Datensicherheit und sei dies auch nur fahrlässig,
+                            so besteht nach allgemeinem Zivilrecht die Verpflichtung zum Schadenersatz. Der Kläger hat dabei nur nachzuweisen,
+                            dass der Schädiger anwendbare gesetzliche und/oder vertragliche Normen nicht eingehalten hat und ein Schaden tatsächlich entstanden ist.
+                            Die Einhaltung der Mindestschutzvorschriften des Datenschutzgesetzes wird - wie bereits oben gezeigt -
+                            in vielen Fällen als Handelsbrauch auch bei nicht personenbezogenen Daten obligatorisch sein.
+                        </p>
+                    </section>
                 </section>
 
                 <section>
                     <section>
                         <h1>6. Standards</h1>
+                    </section>
+
+                    <section>
+                        <h2>Zertifizierung</h2>
+                        <p>Zur Bewertung und Zertifizierung (Qualitätsmanagement) der Sicherheit von Computersystemen existieren internationale Normen.
+                            Wichtige Normen in diesem Zusammenhang sind vor allem die amerikanischen TCSEC- und die europäischen ITSEC-Standards sowie der
+                            neuere Common Criteria-Standard. Die Zertifizierung erfolgt in Deutschland in der Regel durch das
+                            Bundesamt für Sicherheit in der Informationstechnik (BSI).
+                        </p>
+                        <p>
+                            Die IT-Grundschutz-Kataloge des BSI definieren für die verschiedenen Aspekte einer
+                            IT-	Landschaft konkrete Maßnahmen, die zur Erhaltung der Sicherheit bei
+                            niedrigem und mittlerem Schutzbedarf erfüllt werden müssen (Waschzettel).
+                            Die Grundschutz-Kataloge sind primär in Deutschland bekannt, liegen
+                            allerdings auch 	englischsprachig vor.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>ISO/IEC 27001: Normenreihe für Informationsicherheitsmanagementsysteme</p>
+                        <p>ISO/IEC 27002:2005: Leitfaden für das Informationssicherheitsmanagement</p>
+                        <p>BS 7799-1 / BS 7799-2</p>
+                        <p>ITIL</p>
+                        <p>BS 15000</p>
+                        <p>ISO 20000: IT-Service-Management</p>
+                        <p>CobiT</p>
+                        <p>ISO 13335: Normenreihe zum Sicherheitsmanagement in der Informations- und Kommunikationstechnik</p>
+                        <p>...</p>
                     </section>
                 </section>
 
@@ -775,6 +1008,16 @@
                     </section>
 
                     <section>
+                        <h2>Was tun wenn's doch passiert ist?</h2>
+                        <p>Die guten Angriffe bleiben lange unentdeckt.</p>
+                        <p>Sofort vom Netz trennen</p>
+                        <p>Ermittlungsbehörden benachrichtigen</p>
+                        <p>Computer-Forensik</p>
+                        <p>Spurensuche in Logfiles, Betriebssystem, …</p>
+                        <p>Extrem teuer und aufwändig!</p>
+                    </section>
+
+                    <section>
                         <h2>Web 2.0</h2>
                         <p>Appikationen werden mächtiger und komplizierter</p>
                         <p>Social Networks machen Daten überallverfügbar</p>
@@ -790,7 +1033,7 @@
                         <p>Klartext speichern vermeiden!</p>
                         <p>Verschlüsselt übertragen!</p>
                         <p>Man kann nicht überall sofort gut sein. Ein Schritt nach dem anderen!</p>
-                        <p>Rechtlicher Beistand schadet nicht!</p>
+                        <p>Rechtlicher / professioneller Beistand schadet nicht!</p>
                         <p>Planung!</p>
                         <p>Gehirn einschalten!!!</p>
                     </section>
