@@ -582,6 +582,15 @@
                     </section>
 
                     <section>
+                        <h2>Anonymisierung</h2>
+                        <p>Verschleierung von Software, Cookies, Herkunft, ...</p>
+                        <p>Private Modus in Firefox und Chrome</p>
+                        <p>Browser-Addons z.B. für Chrome / FF</p>
+                        <p>Proxy-Services aka Anonymizer</p>
+                        <p>TOR-Netzwerk</p>
+                    </section>
+
+                    <section>
                         <h2>@home</h2>
                         <p>Viruskiller / Adware / Spyware und automatische Signatur-Updates</p>
                         <p>Firewall installieren (Test mit Online-Portscanner)</p>
@@ -700,6 +709,7 @@
                         <p>Mit Hilfe des öffentlichen Schlüssels kann diese Nachricht nicht gelesen werden</p>
                         <p>Austausch der Schlüssel häufig symmetrisch verschlüsselt</p>
                         <p>Worst case: Verlust / Kompromitierung des persönlichen Schlüssels</p>
+                        <p>100 - 1000 mal langsmaer als symetrische Verschlüsselung</p>
                     </section>
 
                     <section>
@@ -999,6 +1009,72 @@
                         <p>Gefahr als Spam verschrien zu sein</p>
                         <p>Html vs. Plaintext => Multipart</p>
                         <p>Impressum & Abmeldelink in der Email</p>
+                    </section>
+
+                    <section>
+                        <h2>Passwörter</h2>
+                        <h3>Was müssen wir als Applikationsentwickler beachten?</h3>
+                        <div class="fragment">
+                            <p>Passwörter sollten möglichst sicher sein</p>
+                        </div>
+                        <div class="fragment">
+                            <p>Sicheres Speichern der Passwörter</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Sichere Passwörter</h2>
+                    </section>
+
+                    <section>
+                        <h2>Sichere Passwörter</h2>
+                        <p>Mindestlänge</p>
+                        <p>Nicht der Benutzername oder Teile des Benutzernamens</p>
+                        <p>Nicht in einem Wörterbuch</p>
+                        <p>Gross- und Kleinbuchsten</p>
+                        <p>Zahlen</p>
+                        <p>Sonderzeichen</p>
+                        <p>Zahlen und Sonderzeichen möglichst in der Mitte</p>
+                        <p>Automatisch generierte Passwörter</p>
+                    </section>
+
+                    <section>
+                        <h2>Sicheres Abspeichern</h2>
+                    </section>
+
+                    <section>
+                        <h2>Sicheres Abspeichern</h2>
+                        <p>Besonders gesicherte Datenbank / Server</p>
+                        <p>Passwörter <strong>NICHT</strong> im Klartext abspeichern</p>
+                        <p>Sicheren Verschlüsselungsalgorithmus benutzen (SHA256, AES, ...)</p>
+                        <p>
+                            Zusammengesetzten Salt verweden
+                            <ul>
+                                <li>
+                                    Applikation<br />
+                                    Zufällige Zeichekette in Programmcode / Konfiguration
+                                </li>
+                                <li>
+                                     Per User<br />
+                                     Zufall und nicht Usernamen und in DB speichern
+                                </li>
+                            </ul>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Authentifizierung</h2>
+                    </section>
+
+                    <section>
+                        <h2>Authentifizierung</h2>
+                        <h3>OAuth style</h3>
+                        <p>Eigenes System zur Authentifzierung</p>
+                        <p>Authentifizierung via Username / Passwort</p>
+                        <p>Benutzung von zeitlich begrenzten Tokens</p>
+                        <p>Refresh Token in Client</p>
+                        <p>Muss man das selber programmieren? Kann man, muss man aber nicht.</p>
+                        <p>Provider benutzen => Facebook / Google / Twitter</p>
                     </section>
                 </section>
 
