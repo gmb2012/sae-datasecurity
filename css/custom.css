@@ -5,6 +5,11 @@
     height: 0px;
 }
 
+.reveal .state-background {
+    width: 2000px;
+    height: 2000px;
+}
+
 .reveal .slides {
     max-width: 1350px;
     width: 1350px;

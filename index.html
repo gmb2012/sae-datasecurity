@@ -31,6 +31,26 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 
+        <style>
+            .dollar .reveal .state-background {
+                background-image: url("images/dollar.jpg");
+            }
+
+            .questions .reveal .state-background {
+                background-image: url("images/tafel.jpg");
+                background-size:100% ;
+            }
+
+            .brain .reveal .state-background {
+                background-image: url("images/brain.jpg");
+                background-repeat: no-repeat;
+                background-position: 300px 100px;
+                background-color: #000000;
+            }
+
+        </style>
+
+
 	</head>
 
 	<body>
@@ -1129,12 +1149,17 @@
                         <p><a href="http://www.bsi.bund.de">www.bsi.bund.de</a></p>
                         <p><a href="http://www.sektioneins.com">www.sektioneins.com</a></p>
                     </section>
+
+                    <section data-state="questions">
+                        <h1>Fragen?</h1>
+                    </section>
                 </section>
 
 				<section>
 					<h1>THE END</h1>
-					<h3>Fragen?</h3>
+					<br /><br />
                     <h3>Vielen Dank für die Aufmerksamkeit und Stimmung!</h3>
+                    <p>Made with <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
 				</section>
 
 			</div>
@@ -1170,24 +1195,6 @@
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-
-            Reveal.addEventListener( 'dollar', function() {
-                document.getElementsByTagName("body")[0].style.backgroundImage = "url(images/dollar.jpg)";
-
-            }, false );
-
-            Reveal.addEventListener( 'brain', function() {
-                document.getElementsByTagName("body")[0].style.backgroundImage = "url(images/brain.jpg)";
-                document.getElementsByTagName("body")[0].style.backgroundRepeat = "no-repeat";
-                document.getElementsByTagName("body")[0].style.backgroundPosition = "center center";
-                document.getElementsByTagName("body")[0].setAttribute("class", "black");
-
-            }, false );
-
-            Reveal.addEventListener( 'reset', function( event ) {
-                document.getElementsByTagName("body")[0].style.backgroundImage = "";
-                document.getElementsByTagName("body")[0].setAttribute("class", "");
-            } );
         </script>
 
 	</body>
