@@ -38,7 +38,7 @@
 
             .questions .reveal .state-background {
                 background-image: url("images/tafel.jpg");
-                background-size:100% ;
+                background-size:120% ;
             }
 
             .brain .reveal .state-background {
@@ -72,7 +72,10 @@
                         <p>
                             Bjoern Zapadlo<br />
                             Konstanz<br />
-                            33 Jahre
+                            <span id="age"></span> Jahre
+                            <script>
+                                document.getElementById("age").innerHTML = Math.round((new Date() - new Date(1979, 6, 14)) / (1000*60*60*24*365))
+                            </script>
                         </p>
                         <p>
                             Teamlead / Senior Software Developer HolidayCheck AG
@@ -1181,10 +1184,12 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                width: 1400,
+                height: 800,
+                controls: true,
+                progress: true,
+                history: true,
+                center: false,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
