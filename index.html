@@ -41,6 +41,18 @@
                 background-size:120% ;
             }
 
+            .heartbleed .reveal .state-background {
+                background-image: url("images/heartbleed.png");
+                background-color: #FFFFFF;
+                background-size: 40% ;
+                background-repeat: no-repeat;
+                background-position: right;
+            }
+
+            .heartbleed p {
+                color: black;
+            }
+
             .brain .reveal .state-background {
                 background-image: url("images/brain.jpg");
                 background-repeat: no-repeat;
@@ -78,7 +90,7 @@
                             </script>
                         </p>
                         <p>
-                            Teamlead / Senior Software Developer HolidayCheck AG
+                            Development Manager / Consultant HolidayCheck AG
                         </p>
                         <p>
                             Informatik Studium 1999 - 2002<br />
@@ -170,6 +182,18 @@
                             </li>
                             <li>Misc / Q&A</li>
                         </ol>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Before we start</h1>
+                    </section>
+                    <section>
+                        <h2>Übung</h2>
+                        <p>
+                            Wo kommt ihr mit den Themen Datensicherheit und -schutz in Berührung?
+                        </p>
                     </section>
                 </section>
 
@@ -364,7 +388,7 @@
 
                     <section data-state="reset">
                         <h2>Und warum?</h2>
-                        <p>Systemmissbrauch, durch illegitime Ressourcennutzung</p>
+                        <p>Systemmissbrauch, durch illegitime Ressourcennutzung, z.B. Bitcoin Mining</p>
                         <p>Veränderung von publizierten Inhalten, etc.</p>
                         <p>Sabotage</p>
                         <p>Spionage</p>
@@ -377,8 +401,17 @@
                 </section>
 
                 <section>
+                    <section>
+                        <h1>Und wie oft?</h1>
+                        <div class="fragment"><a href="http://map.ipviking.com/" target="_blank">http://map.ipviking.com/</a>
+                    </section>
+
+
+                </section>
+
+                <section>
                     <section data-state="reset">
-                        <h1>2. Bedrohungen</h1>
+                        <h1>Bedrohungen</h1>
                     </section>
 
                     <section>
@@ -544,11 +577,39 @@
                         <p>Vollständiges Impressum falls es doch Beschwerden gibt</p>
                         <p>Logging von Aktivität zur nachträglichen Aufspüren von Straftaten (Tracking)</p>
                     </section>
+
+                    <section data-state="heartbleed">
+                        <h2>Heartbleed</h2>
+                        <p>
+                            Der Heartbleed-Bug ist ein schwerwiegender Programmfehler in älteren Versionen der Open-Source-Bibliothek OpenSSL,
+                            durch den über verschlüsselte TLS-Verbindungen private Daten von Clients und Servern ausgelesen werden können.
+                            Der Fehler betrifft die OpenSSL-Versionen 1.0.1 bis 1.0.1f und wurde mit Version 1.0.1g am 7. April 2014 behoben.
+                            Ein großer Teil der Internetdienste, darunter auch namhafte Websites wie auch VoIP-Telefone, Router und Netzwerkdrucker waren dadurch für Angriffe anfällig.
+                        </p>
+                    </section>
+
+                    <section data-state="heartbleed">
+                        <p>
+                            Der Fehler befindet sich in der OpenSSL-Implementierung der Heartbeat-Erweiterung für die Verschlüsselungsprotokolle TLS und DTLS.
+                            Die Heartbeat-Erweiterung sieht vor, dass ein Kommunikationsteilnehmer eine bis zu 16 kByte große Menge an beliebigen Daten (Payload und Padding)
+                            an die Gegenseite schickt, die anschließend den Payload-Teil unverändert zurücksendet, womit periodisch abgeprüft werden kann, ob die Verbindung zum Server noch besteht.
+                        </p>
+                        <p>
+                            Bei der fehlerhaften Implementierung dieser Funktion wird nicht überprüft, ob die angegebene Länge der Daten mit der tatsächlichen Länge der mitgelieferten Daten übereinstimmt.
+                            Ist die angegebene Länge größer als die tatsächliche Länge, so kopiert die OpenSSL-Implementierung über das Ende des Eingabepuffers hinaus Daten aus dem Heap in den Ausgabepuffer.
+                            Aufgrund der fehlenden Überprüfung kann ein Angreifer mit einer Anfrage bis zu 64 kByte des Arbeitsspeichers der Gegenstelle auslesen.
+                            Der Angriff kann mehrmals hintereinander durchgeführt werden, um mehr Speicher auszulesen.
+                            In Tests gelang es damit unter anderem den privaten Schlüssel des Serverzertifikats, Benutzernamen und Passwörter von Servern auszulesen.
+                        </p>
+                    </section>
+                    <section data-state="heartbleed">
+                        <img src="images/Heartbleed_bug_explained.svg.png" />
+                    </section>
                 </section>
 
                 <section>
                     <section data-state="reset">
-                        <h1>3. Verteidigung</h1>
+                        <h1>Verteidigung</h1>
                     </section>
 
                     <section data-state="brain">
@@ -635,6 +696,20 @@
                     </section>
 
                     <section>
+                        <h2>Gute Passwörter</h2>
+                        <ul>
+                            <li>Ausreichende Länge</li>
+                            <li>Verschiedene Zeichenklassen</li>
+                            <li>Keine Wörter</li>
+                            <li>Sonderzeichen und Zahlen in der Mitte</li>
+                            <li>Z.B. Keine 3 anstatt E</li>
+                            <li>Rotation</li>
+                            <li>Verschieden pro Applikation (Password-Tool)</li>
+                            <li><strong>Nicht aufschreiben</strong></li>
+                        </ul>
+                    </section>
+
+                    <section>
                         <h2>Webapplikation</h2>
                         <p>
                             <h3>Aktuelle Komponenten benutzen:</h3>
@@ -646,8 +721,50 @@
                         </p>
                         <p>
                             <h3>Security best practices / Härten der Applikation</h3>
-                           Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting
+                           Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting / OAuth benutzen
                         </p>
+                    </section>
+
+                    <section>
+                        <h2>2 Faktor Authentifizierung</h2>
+                        <p>
+                            Die Zwei-Faktor-Authentifizierung (kurz 2FA) dient dem Identitätsnachweis eines Nutzers mittels der Kombination zweier verschiedener Komponenten.
+                            Das kann etwas sein, was er weiß, etwas, was er besitzt, oder etwas, was untrennbar zu ihm gehört.
+                            Aus dem Alltag ist dies z. B. vom Geldautomaten bekannt. Erst die Kombination aus Bankkarte und PIN ermöglicht die Transaktion.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            ie Zwei-Faktor-Authentifizierung als Identitätsnachweis ist nur dann funktionsfähig, wenn beide benötigten Faktoren eingesetzt werden und korrekt sind.
+                            Fehlt eine Komponente oder wird sie falsch verwendet, lässt sich die Identität nicht zweifelsfrei feststellen.
+                            Der Zugriff, der durch die Zwei-Faktor-Authentifizierung geschützt ist, bleibt verweigert. Die Faktoren können sein:
+                            <ul>
+                                <li>etwas, was der Nutzer besitzt: z. B. ein Token (USB-Stick etc.), eine Bankkarte, ein Schlüssel u. Ä.,</li>
+                                <li>etwas, was der Nutzer weiß: z. B. sein Benutzername, Passwort, PIN, TAN u. Ä., sowie</li>
+                                <li>etwas, was als körperliches Charakteristikum untrennbar zum Nutzer gehört: z. B. sein Fingerabdruck, die Regenbogenhaut (Iris) seines Auges, seine Stimme u. Ä.</li>
+                            </ul>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Welchen Token haben wir wohl heute immer dabei?</h3>
+                        <h2 class="fragment">Mobiltelefon</h2>
+                        <div class="fragment">
+                            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">Google Autheticator App Android</a> (Ja, gibt's auch für IPhone)
+                            <br />
+                            <a href="http://www.zapadlo.de/wp-admin" target="_blank">Wordpress</a>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Wordpress</h2>
+                        <h3>Beliebtestes Tool im Internet</h3>
+                        <p>Daher sehr beliebtes Angriffsziel</p>
+                        <h3>Hauptangriffspunkt sind die Plugins</h3>
+                        <p>Aktuell halten</p>
+                        <p>nicht benötigte Plugins deinstallieren</p>
+                        <p>Security Plugins nutzen (Google Authenticator)</p>
                     </section>
 
                     <section>
