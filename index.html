@@ -21,11 +21,22 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' )
-                    + '.css" type="text/css" media="print">' );
-		</script>
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/pdf_custom.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -199,7 +210,7 @@
 
                 <section>
                     <section>
-                        <h1>1. Definitionen</h1>
+                        <h1>Definitionen</h1>
                     </section>
 
                     <section>
@@ -534,6 +545,39 @@
                     </section>
 
                     <section>
+                        <h2>Beispiel - PHP</h2>
+                        <pre><code data-trim>
+&lt;?php
+if ( isset( $_GET['COLOR'] ) ) {
+    include( $_GET['COLOR'] . '.php' );
+}
+?&gt
+
+&lt;form method=&quot;get&quot;&gt;
+    &lt;select name=&quot;COLOR&quot;&gt;
+        &lt;option value=&quot;red&quot;&gt;red&lt;/option&gt;
+        &lt;option value=&quot;blue&quot;&gt;blue&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+                        </code></pre>
+                        <pre><code>/vulnerable.php?COLOR=/etc/passwd%00</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Beispiel - Javascript</h2>
+                        <pre><code data-trim="data-trim">
+&lt;?php
+$name = $_GET['name'];
+echo &quot;Welcome $name&lt;br&gt;&quot;;
+echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Download&lt;/a&gt;&quot;;
+?&gt;
+                        </code></pre>
+                        <pre><code>index.php?name=guest&lt;script&gt;alert('attacked')&lt;/script&gt;</code></pre>
+                        <pre><code>index.php?name=&lt;script&gt;window.onload = function() {var link=document.getElementsByTagName(&quot;a&quot;);link[0].href=&quot;http://not-real-xssattackexamples.com/&quot;;}&lt;/script&gt;</script></code></pre>
+                    </section>
+
+                    <section>
                         <h2>SQL-Injection</h2>
                         <p>Angriff auf die Datenbank</p>
                         <p>Anlegen von Benutzern</p>
@@ -604,6 +648,39 @@
                     </section>
                     <section data-state="heartbleed">
                         <img src="images/Heartbleed_bug_explained.svg.png" />
+                    </section>
+
+                    <section>
+                        <h2>Clickjacking</h2>
+                        <p>
+                            Clickjacking ist eine Technik, bei der ein Computerhacker die Darstellung einer Internetseite überlagert und dann deren Nutzer dazu veranlasst,
+                            scheinbar harmlose Mausklicks und/oder Tastatureingaben durchzuführen.
+                        </p>
+                        <p>
+                            Dabei lassen Angreifer die ahnungslosen Anwender – scheinbar – auf die überlagerten Objekte klicken. Tatsächlich jedoch wird der ursprüngliche Inhalt (Button/Link)
+                            der Internetseite ausgelöst. So geschieht es, dass der User – anstatt lediglich auf die ihm vorgegaukelten Links an einer Stelle zu klicken –
+                            eine vom Hacker definierte, beliebige Aktion auslöst.
+                        </p>
+                        <p>
+                            Dies betrifft Seiten, die beispielsweise Links und Schaltflächen zur Konfiguration von Systemeinstellungen enthalten. Während der Nutzer also denkt,
+                            er tätige harmlose Eingaben in einer Internetseite, ändert er in Wahrheit, ohne es zu merken, z. B. Einstellungen einer angeschlossenen Kamera oder eines Mikrophons.
+                        </p>
+                        <p>
+                            Beispielsweise kann so auch eine Website-Schaltfläche, die zum Absenden von Anmeldedaten dient, mit einem für den User unsichtbaren Button überlagert werden.
+                            Über diesen lassen sich die Informationen an den Angreifer übermitteln.
+                        </p>
+                    </section>
+
+                    <section>
+                         <p>
+                            Dies wird meist mit Hilfe von Frames oder IFrames vorgenommen.
+                        </p>
+                        <p>
+                            Ein Schutz ist u.a. die Verwenung von Framekiller Javascript-Code und X-Frame-Options-Headers.
+                        </p>
+                        <p>
+                            <a href="https://www.youtube.com/watch?v=gxyLbpldmuU" target="_blank">YouTube Demo</a>
+                        </p>
                     </section>
                 </section>
 
@@ -696,20 +773,6 @@
                     </section>
 
                     <section>
-                        <h2>Gute Passwörter</h2>
-                        <ul>
-                            <li>Ausreichende Länge</li>
-                            <li>Verschiedene Zeichenklassen</li>
-                            <li>Keine Wörter</li>
-                            <li>Sonderzeichen und Zahlen in der Mitte</li>
-                            <li>Z.B. Keine 3 anstatt E</li>
-                            <li>Rotation</li>
-                            <li>Verschieden pro Applikation (Password-Tool)</li>
-                            <li><strong>Nicht aufschreiben</strong></li>
-                        </ul>
-                    </section>
-
-                    <section>
                         <h2>Webapplikation</h2>
                         <p>
                             <h3>Aktuelle Komponenten benutzen:</h3>
@@ -736,7 +799,7 @@
 
                     <section>
                         <p>
-                            ie Zwei-Faktor-Authentifizierung als Identitätsnachweis ist nur dann funktionsfähig, wenn beide benötigten Faktoren eingesetzt werden und korrekt sind.
+                            Die Zwei-Faktor-Authentifizierung als Identitätsnachweis ist nur dann funktionsfähig, wenn beide benötigten Faktoren eingesetzt werden und korrekt sind.
                             Fehlt eine Komponente oder wird sie falsch verwendet, lässt sich die Identität nicht zweifelsfrei feststellen.
                             Der Zugriff, der durch die Zwei-Faktor-Authentifizierung geschützt ist, bleibt verweigert. Die Faktoren können sein:
                             <ul>
@@ -755,6 +818,61 @@
                             <br />
                             <a href="http://www.zapadlo.de/wp-admin" target="_blank">Wordpress</a>
                         </div>
+                    </section>
+
+                    <section>
+                        <h2>Online Banking - TAN</h2>
+                        <h3>TAN-Liste</h3>
+                        <p>
+                            Beim klassischen TAN-Verfahren erhält der Teilnehmer beim Electronic Banking, meist per Post, eine Liste von Transaktionsnummern.
+                            Bei jedem Buchungsvorgang – der Transaktion – muss eine beliebige TAN der aktiven Liste eingegeben werden.
+                            Sie ist eine Ergänzung zur Persönlichen Identifikationsnummer (PIN).
+                            alls die Bank nach Eingabe der korrekten PIN einen Buchungsauftrag mit korrekter TAN erhält, geht sie davon aus,
+                            dass der Auftrag vom Kunden abgesendet wurde. Die TAN wird von der Bank als Quasi-Unterschrift interpretiert. Sie verfällt nach einmaligem Gebrauch.
+                            Wenn die TAN-Liste zur Neige geht, erhält der Kunde von der Bank nach Anforderung oder automatisch eine neue.
+                        </p>
+                        <p>
+                            Auf Grund von stark anwachsenden Phishing-Angriffen wird diese Art der TAN-Liste kaum noch verwendet.
+                            Fast alle Banken setzen nun die Form der indizierten TAN-Liste ein.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Indizierte TAN-Liste</h3>
+                        <p>
+                            Einen Schritt weiter geht das Verfahren der indizierten Transaktionsnummern, kurz iTAN:
+                            Der Kunde kann hier seinen Auftrag nicht mehr mit einer beliebigen TAN aus seiner Liste legitimieren, sondern wird von der Bank aufgefordert,
+                            eine bestimmte, durch eine Positionsnummer (Index) gekennzeichnete TAN aus seiner zu diesem Zweck nun durchnummerierten Liste einzugeben.
+                            Der TAN-Aufforderung muss der Kunde innerhalb weniger Minuten folgen.
+                            Außerdem wird die angeforderte TAN auch im Falle einer Nichtverwendung im Bankrechner als verbraucht gekennzeichnet.
+                        </p>
+                        <p>
+                            Auch dieses Verfahren wird mittlerweile von Hackern auf zwei verschiedene Weisen angegriffen:
+                            <ul>
+                                <li>Gefälschtes Formular, in welches ein User TANs inkl. Index-Nummer eingeben soll</li>
+                                <li>Man in the Middle</li>
+                            </ul>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>mTAN</h3>
+                        <p>
+                            Die Variante Mobile TAN (mTAN) oder smsTAN besteht aus der Einbindung des Übertragungskanals SMS.
+                            Dabei wird dem Onlinebanking-Kunden nach Übersendung
+                            der ausgefüllten Überweisung im Internet seitens der Bank per SMS eine nur für diesen Vorgang verwendbare TAN auf sein Mobiltelefon gesendet.
+                            Der Auftrag muss anschließend mit dieser TAN bestätigt werden.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>TAN Generator</h3>
+                        <p>
+                            Mit einem TAN-Generator können TANs elektronisch erzeugt werden.
+                            Hierzu muss dieser mit der Bank synchronisiert und bei jeder Transaktion mit der EC-Karte authorisiert werden.
+                            Anschliessend wird aus den den Daten der Transaktion bei der Bank und via Generator eine TAN erzeugt und diese wird abgeglichen.
+                            Die Eingabe der benötigten Daten (meist Kontonummer und Betrag) kann dabei über eine Tastatur, Flicker-Codes oder QR Codes erfolgen.
+                        </p>
                     </section>
 
                     <section>
@@ -920,7 +1038,7 @@
 
                 <section>
                     <section>
-                        <h1>4. Datenschutz</h1>
+                        <h1>Datenschutz</h1>
                     </section>
 
                     <section>
@@ -1009,7 +1127,7 @@
 
                 <section>
                     <section>
-                        <h1>5. Rechtliches</h1>
+                        <h1>Rechtliches</h1>
                     </section>
 
                     <section>
@@ -1109,7 +1227,7 @@
 
                 <section>
                     <section>
-                        <h1>6. Standards</h1>
+                        <h1>Standards</h1>
                     </section>
 
                     <section>
@@ -1143,7 +1261,7 @@
 
                 <section>
                     <section>
-                        <h1>7. A closer look</h1>
+                        <h1>A closer look</h1>
                     </section>
 
                     <section>
@@ -1178,11 +1296,13 @@
                         <p>Mindestlänge</p>
                         <p>Nicht der Benutzername oder Teile des Benutzernamens</p>
                         <p>Nicht in einem Wörterbuch</p>
-                        <p>Gross- und Kleinbuchsten</p>
-                        <p>Zahlen</p>
-                        <p>Sonderzeichen</p>
+                        <p>Gross- und Kleinbuchsten & Zahlen & Sonderzeichen</p>
                         <p>Zahlen und Sonderzeichen möglichst in der Mitte</p>
+                        <p>Z.B. Keine 3 anstatt E</p>
+                        <p>Passwort Rotation</p>
                         <p>Automatisch generierte Passwörter</p>
+                        <p>Verschieden pro Applikation (Password-Tool)</p>
+                        <p><strong>Nicht aufschreiben</strong></p>
                     </section>
 
                     <section>
@@ -1227,7 +1347,7 @@
 
                 <section>
                     <section>
-                        <h1>8. Misc / Q&A</h1>
+                        <h1>Misc / Q & A</h1>
                     </section>
 
                     <section>
