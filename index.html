@@ -463,6 +463,7 @@
                             Verlust von Notebooks, Handys, USB-Sticks<br />
                             <cite>London pro Jahr in Taxis: >3000, >6000, >2000</cite>
                         </p>
+                        <p>Social Engineering => Emails</p>
                     </section>
 
                     <section>
@@ -672,6 +673,11 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                     </section>
 
                     <section>
+                        <h2>Wer hat einen Virenscanner installiert?</h2>
+                        <h2 class="fragment">Und auf dem Handy?</h2>
+                    </section>
+
+                    <section>
                         <h2>Mobbing / Jugendschutz / Anbieterkennzeichnung / Betrug</h2>
                         <p>Rechtlich relevante Themen</p>
                         <p>Sicherstellung des Alters durch Verfahren (PostIdent, Personalausweis, Konto, ...)</p>
@@ -825,9 +831,15 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                         <p>(Surf)verhalten an die Gefahren anpassen</p>
                         <p>Passwörter verwenden: Passwort-Regeln</p>
                         <p>WPA(2) bei WLAN</p>
-                        <p>VPN / SSH</p>
                         <p>(Surfaccount mit wenigen Rechten einrichten.)</p>
                         <p>(Browser / Email-Client abdichten)</p>
+                    </section>
+
+                    <section>
+                        <h2>Remote Access</h2>
+                        <h3>VPN</h3>
+                        <h3>SSH</h3>
+                        <h3>FTPS bzw. SFTP</h3>
                     </section>
 
                     <section>
@@ -844,6 +856,14 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                             <h3>Security best practices / Härten der Applikation</h3>
                            Session / Formulare (Token, Captcha) / URL (Checksumme) / Whitelisting / OAuth benutzen
                         </p>
+                    </section>
+
+                    <section>
+                        <h2>Biometrische Verfahren</h2>
+                        <h3>Fingerabdruck</h3>
+                        <h3>Retina</h3>
+                        <h3>...</h3>
+                        <h3>Problem: Teuer und noch unausgereift bzw. angreifbar</h3>
                     </section>
 
                     <section>
@@ -1005,7 +1025,7 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                         <h3>redundant array of independent disks</h3>
                         <p>RAID 0: Geschwindigkeit</p>
                         <p>RAID 1: Sicherheit</p>
-                        <p>RAID 5: Sicherheit</p>
+                        <p>RAID 5: Geschwindigkeit + Sicherheit</p>
                         <p><strong>Raid ist kein Ersatz für ein Backup</strong></p>
                     </section>
 
@@ -1061,9 +1081,45 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                     </section>
 
                     <section>
+                        <h2>Verschlüsselung</h2>
+                        <h3>Kerckhoffs-Prinzip</h3>
+                        <p>
+                            Die Sicherheit eines Verfahrens darf nicht von der
+                            Geheimhaltung des Verfahrens abhängen, sondern nur von
+                            der Geheimhaltung des Schlüssels.<br />
+                            <cite>[Auguste Kerkhoffs: La Cryptographie militaire. Journal des
+                                Sciences Militaires, Januar 1883.]</cite>
+                        </p>
+                    </section>
+
+                    <section>
                         <h2>Verschlüsselung vs. Hashing</h2>
                         <h3>Umkehrbarkeit</h3>
                         <h3>Ziel: Vertraulichkeit vs. Integrität</h3>
+                    </section>
+
+                    <section>
+                        <h2>Kryptoanalyse</h2>
+                        <h3>Durch BigData und aktuelle Rechenpower immer einfacher</h3>
+                        <h3>Sprache ist nicht normal verteilt</h3>
+                        <h3>Sicherer Algorithmus und ausreichend langer Schlüssel bleiben die Voraussetzung für Sicherheit</h3>
+                    </section>
+
+                    <section>
+                        <h2>Steganographie</h2>
+                        <h3>Versteckte Information z.B. in Bildern</h3>
+                        <h3>Zusätzlich Verschlüsselung möglich</h3>
+                        <img src="images/Little_Red_Riding_Hood.jpg" style="height: 350px" class="fragment" />
+                    </section>
+
+                    <section>
+                        <h2>Steganographie vs. Kryptographie</h2>
+                        <h3>Steganographie bietet eine weitere Stufe von Vertraulichkeit</h3>
+                        <ul>
+                            <li>Kryptographie: Vertraulichkeit der Nachricht</li>
+                            <li>Steganographie: Vertraulichkeit der Existenz der Nachricht</li>
+                            <li>Steganographisches System wird als unsicher betrachtet, wenn die Existenz der eingebetteten Nachricht erkannt werden kann</li>
+                        </ul>
                     </section>
 
                     <section>
