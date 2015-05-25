@@ -461,7 +461,7 @@
                         <p>Bequemlichkeit</p>
                         <p>
                             Verlust von Notebooks, Handys, USB-Sticks<br />
-                            <cite>London pro Jahr in Taxis: 3000, 6000, 2000</cite>
+                            <cite>London pro Jahr in Taxis: >3000, >6000, >2000</cite>
                         </p>
                     </section>
 
@@ -474,6 +474,19 @@
                         <p>Host-Datei</p>
                         <p>Kontrolle über Netzwerk-Hardware</p>
                         <p>Ziel: z.B. Online Banking</p>
+                    </section>
+
+                    <section>
+                        <h2>Botnetze</h2>
+                        <p>
+                            Ein Botnet oder Botnetz ist eine Gruppe von automatisierten Computerprogrammen, sogenannten Bots.
+                            Die Bots (von englisch: robot „Roboter“) laufen auf vernetzten Rechnern, deren Netzwerkanbindung sowie lokale Ressourcen und Daten ihnen zur Verfügung stehen.
+                            In Deutschland gab es 2010 über 470.000 solcher Bots, von denen im Durchschnitt etwa 2.000 pro Tag aktiv waren.[1]
+                            Betreiber illegaler Botnetze installieren die Bots ohne Wissen der Inhaber auf Computern und nutzen sie für ihre Zwecke.
+                        </p>
+                        <p>
+                            Einsatz als Proxy, SPAM, Phising, DDOS und Passwort Brute Force
+                        </p>
                     </section>
 
                     <section>
@@ -491,6 +504,36 @@
                             Normalerweise werden solche Angriffe nicht per Hand, sondern mit Backdoor-Programmen oder Ähnlichem durchgeführt,
                             die sich von alleine auf anderen Rechnern im Netzwerk verbreiten und dem Angreifer durch solche Botnetze weitere Wirte zum
                             Ausführen seiner Angriffe bringen.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Distributed Denial of Service</h2>
+                        <p>
+                            Wird die Überlastung von einer größeren Anzahl anderer Systeme verursacht,
+                            so wird von einer Verteilten Dienstblockade oder englisch Distributed Denial of Service (DDoS) gesprochen.<br />
+                            Mutwillige DDoS-Angriffe werden oft  mit Hilfe von Backdoor-Programmen oder Ähnlichem durchgeführt.
+                            Diese Backdoor-Programme werden in der Regel von Computerwürmern auf nicht ausreichend geschützten Rechnern installiert und
+                            versuchen selbstständig, weitere Rechner im Netzwerk zu infizieren, um so ein Botnetz aufzubauen.
+                            Je größer das Botnetz, desto wahrscheinlicher ist, dass der Angriff selbst gegen gut geschützte Systeme durchdringt.
+                            Die Steuerung des Angriffs erfolgt über IRC, HTTP oder mittels eines Peer-to-Peer-Netzes.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Distributed-Reflected-Denial-of-Service-Angriff</h2>
+                        <p>
+                            Eine besondere Form stellt der Distributed-Reflected-Denial-of-Service-Angriff (DRDoS-Angriff) dar.
+                            Hierbei adressiert der Angreifer seine Datenpakete nicht direkt an das Opfer, sondern an regulär arbeitende Internetdienste,
+                            trägt jedoch als Absenderadresse die des Opfers ein (IP-Spoofing).
+                            Die Antworten auf diese Anfragen stellen dann für das Opfer den eigentlichen DoS-Angriff dar.
+                            Durch diese Vorgehensweise ist der Ursprung des Angriffs für den Angegriffenen nicht mehr direkt ermittelbar.
+                            Ein Beispiel für einen solchen Angriff ist die DNS Amplification Attack, bei der das Domain Name System als Reflektor missbraucht wird.
+                        </p>
+                        <p>
+                            Weitere bekannte Methoden sind der Smurf- und der Fraggle-Angriff,
+                            bei denen ein Paket mit der IP-Adresse des Opfers als Absender an die Broadcast-Adresse eines Netzwerks gesendet wird.
+                            Das bewirkt, dass das Paket um die Anzahl der Geräte im Netzwerk vervielfacht und an das Opfer zurückgeschickt wird.
                         </p>
                     </section>
 
@@ -933,7 +976,6 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                             Medien<br />
                             Festplatte / Bänder / DVD / BlueRay / Online-Backup
                         </p>
-                        <p>RAID 1/5</p>
                         <p>Backup vs. Archivierung vs. Image</p>
                         <p>
                             Strategien<br />
@@ -956,7 +998,15 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                         <p>Sicherheit</p>
                         <p>vs.</p>
                         <p>Lebenszeit</p>
-                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Raid</h2>
+                        <h3>redundant array of independent disks</h3>
+                        <p>RAID 0: Geschwindigkeit</p>
+                        <p>RAID 1: Sicherheit</p>
+                        <p>RAID 5: Sicherheit</p>
+                        <p><strong>Raid ist kein Ersatz für ein Backup</strong></p>
                     </section>
 
                     <section>
@@ -1008,6 +1058,12 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                             AES<br />
                             Blowfish / Twofish
                         </p>
+                    </section>
+
+                    <section>
+                        <h2>Verschlüsselung vs. Hashing</h2>
+                        <h3>Umkehrbarkeit</h3>
+                        <h3>Ziel: Vertraulichkeit vs. Integrität</h3>
                     </section>
 
                     <section>
@@ -1304,10 +1360,6 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
 
                     <section>
                         <h2>Sichere Passwörter</h2>
-                    </section>
-
-                    <section>
-                        <h2>Sichere Passwörter</h2>
                         <p>Mindestlänge</p>
                         <p>Nicht der Benutzername oder Teile des Benutzernamens</p>
                         <p>Nicht in einem Wörterbuch</p>
@@ -1318,10 +1370,6 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                         <p>Automatisch generierte Passwörter</p>
                         <p>Verschieden pro Applikation (Password-Tool)</p>
                         <p><strong>Nicht aufschreiben</strong></p>
-                    </section>
-
-                    <section>
-                        <h2>Sicheres Abspeichern</h2>
                     </section>
 
                     <section>
@@ -1346,10 +1394,6 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
 
                     <section>
                         <h2>Authentifizierung</h2>
-                    </section>
-
-                    <section>
-                        <h2>Authentifizierung</h2>
                         <h3>OAuth style</h3>
                         <p>Eigenes System zur Authentifzierung</p>
                         <p>Authentifizierung via Username / Passwort</p>
@@ -1357,10 +1401,7 @@ echo &quot;&lt;a href=&quot;http://xssattackexamples.com/&quot;&gt;Click to Down
                         <p>Refresh Token in Client</p>
                         <p>Muss man das selber programmieren? Kann man, muss man aber nicht.</p>
                         <p>Provider benutzen => Facebook / Google / Twitter</p>
-                    </section>
-
-                    <section>
-                        <h2>Authorisierung</h2>
+                        <p><a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">http://en.wikipedia.org/wiki/OAuth</a></p>
                     </section>
 
                     <section>
